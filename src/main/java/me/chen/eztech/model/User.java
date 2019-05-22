@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,5 +26,11 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
+
+    /**
+     * Professor 1 : M Topics
+     */
+    @OneToMany(mappedBy = "professor")
+    private List<Project> projects;
 
 }

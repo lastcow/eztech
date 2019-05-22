@@ -19,7 +19,7 @@ public class Role {
     @GenericGenerator(name="system-uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    private String name;
+    private String name;        // Only two rules now, professor and student.
     private String description;
 
     @OneToMany(mappedBy = "role")
