@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}">
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<th:block layout:fragment="script">
+    <script th:src="@{/page/project/js/project.js}"></script>
+</th:block>
+
+<th:block layout:fragment="content">
+    <div class="content-box">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="element-wrapper">
+                    <h6 class="element-header">My Projects</h6>
+                    <div class="element-box">
+                        <div id="dgProjects"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</body>
+</html>
