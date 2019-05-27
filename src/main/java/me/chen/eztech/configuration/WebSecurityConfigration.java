@@ -45,7 +45,7 @@ public class WebSecurityConfigration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/admin/**").permitAll()
                     .and()
                 .formLogin()
-                    .loginPage("/login").defaultSuccessUrl("/dashboard")
+                    .loginPage("/login").defaultSuccessUrl("/admin/dashboard")
                     .permitAll()
                     .and()
                 .logout()

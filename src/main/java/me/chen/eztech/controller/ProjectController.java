@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/project")
 public class ProjectController {
 
-    @GetMapping("/")
+    @GetMapping({"", "/"})
     public String index(){
         return "project/index";
     }

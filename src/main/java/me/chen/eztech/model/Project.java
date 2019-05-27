@@ -5,7 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -22,7 +22,8 @@ public class Project {
 
     private String name;
     private String description;
-    private Timestamp duedate;
+    private Date duedate;
+    private String status;
 
     /**
      * One professor can have multiple project
@@ -30,6 +31,9 @@ public class Project {
     @ManyToOne
     @JoinColumn(name = "professor_id")
     private User professor;
+
+    @OneToMany(mappedBy = "project")
+    private List<User> students;
 
     /**
      * Project has tasks and milestone

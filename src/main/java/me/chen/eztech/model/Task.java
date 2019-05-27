@@ -16,6 +16,7 @@ public class Task {
     private String id;
 
     private String name;
+    private boolean completed;
 
 
     @ManyToOne

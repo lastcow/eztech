@@ -33,4 +33,8 @@ public class User {
     @OneToMany(mappedBy = "professor")
     private List<Project> projects;
 
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
+
 }
