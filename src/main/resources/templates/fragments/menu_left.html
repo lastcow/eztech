@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu left</title>
+</head>
+<body>
+<div th:fragment="menu_left">
+
+    <nav class="cui-menu-left">
+        <div class="cui-menu-left-trigger cui-menu-left-trigger-action"></div>
+        <div class="cui-menu-left-handler">
+            <div class="cui-menu-left-handler-icon"></div>
+        </div>
+        <div class="cui-menu-left-inner">
+            <div class="cui-menu-left-logo">
+                <a href="dashboards-alpha.html">
+                    <img
+                            class="cui-menu-left-logo-default"
+                            src="../../components/dummy-assets/common/img/logo-inverse.png"
+                            alt=""
+                    />
+                    <img
+                            class="cui-menu-left-logo-toggled"
+                            src="../../components/dummy-assets/common/img/logo-mobile.png"
+                            alt=""
+                    />
+                </a>
+            </div>
+            <div class="cui-menu-left-scroll">
+                <ul class="cui-menu-left-list cui-menu-left-list-root">
+                    <li class="cui-menu-left-item">
+                        <a href="javascript: void(0);" class="cui-menu-right-action-toggle">
+                            <span class="cui-menu-left-icon icmn-home"></span>
+                            <span class="cui-menu-left-title">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="cui-menu-left-item cui-menu-left-item-active">
+                        <a href="javascript: void(0);" class="cui-menu-right-action-toggle">
+                            <span class="cui-menu-left-icon icmn-pen"></span>
+                            <span class="cui-menu-left-title">Projects</span>
+                            <span class="ml-2 badge badge-primary">5</span>
+                        </a>
+                    </li>
+
+                    <li class="cui-menu-left-item">
+                        <a href="javascript: void(0);" class="cui-menu-right-action-toggle">
+                            <span class="cui-menu-left-icon icmn-file-text"></span>
+                            <span class="cui-menu-left-title">To-Dos</span>
+                            <span class="ml-2 badge badge-primary">5</span>
+                        </a>
+                    </li>
+
+
+                    <li class="cui-menu-left-item">
+                        <a href="https://docs.cleanuitemplate.com/" target="_blank">
+                            <span class="cui-menu-left-icon icmn-users"></span>
+                            <span class="cui-menu-left-title">Users</span>
+                            <span class="ml-2 badge badge-warning">7</span>
+                        </a>
+                    </li>
+                    <li class="cui-menu-left-divider">
+                        <!-- -->
+                    </li>
+                    <li class="cui-menu-left-item">
+                        <a href="https://docs.cleanuitemplate.com/" target="_blank">
+                            <span class="cui-menu-left-icon icmn-binoculars"></span>
+                            <span class="cui-menu-left-title">Help</span>
+                        </a>
+                    </li>
+                    <li class="cui-menu-left-divider cui-menu-left-item-special">
+                        <!-- -->
+                    </li>
+                    <li class="cui-menu-left-item cui-menu-left-item-special">
+                        <a href="javascript: void(0);">
+                            <span class="cui-utils-donut cui-utils-donut-success"></span>
+                            <span class="cui-menu-left-title">Jupiter</span>
+                        </a>
+                    </li>
+                    <li class="cui-menu-left-item cui-menu-left-item-special">
+                        <a href="javascript: void(0);">
+                            <span class="cui-utils-donut cui-utils-donut-primary"></span>
+                            <span class="cui-menu-left-title">Earth</span>
+                        </a>
+                    </li>
+                    <li class="cui-menu-left-item cui-menu-left-item-special">
+                        <a href="javascript: void(0);">
+                            <span class="cui-utils-donut cui-utils-donut-danger"></span>
+                            <span class="cui-menu-left-title">Mercury</span>
+                        </a>
+                    </li>
+                    <li class="cui-menu-left-divider cui-menu-left-item-special">
+                        <!-- -->
+                    </li>
+                    <li>
+                        <div class="cui-menu-left-buy-pro">
+                            <p>
+                                <strong>EZTECH!</strong>
+                            </p>
+                            <a
+                                    href="https://themeforest.net/item/clean-ui-html-bootstrap-admin-template/22827565?ref=mediatec_software"
+                                    target="_blank"
+                                    class="btn btn-sm btn-danger"
+                            >QingDao University</a
+                            >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+</body>
+</html>

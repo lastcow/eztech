@@ -1,0 +1,290 @@
+/*  ECOMMERCE: DASHBOARD  */
+.cui-ecommerce-dashboard-list-img {
+    display: inline-block;
+    width: 4.61rem;
+    height: 4.61rem;
+    border: 1px solid #e4e9f0;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    background: #fff;
+    text-align: center;
+}
+
+.cui-ecommerce-dashboard-list-img img {
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/*  ECOMMERCE: CART / CHECKOUT  */
+.cui-ecommerce-cart .content {
+    min-height: 7.69rem;
+}
+
+.cui-ecommerce-cart .content > .body {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    position: relative;
+}
+
+.cui-ecommerce-cart .actions {
+    padding-top: 2.3rem;
+    border-top: 1px solid #e4e9f0;
+}
+
+.cui-ecommerce-cart table .text-right input[type='text'] {
+    display: inline-block;
+    text-align: center;
+}
+
+/*  ECOMMERCE: PRODUCT DETAILS */
+.cui-ecommerce-product-descr {
+    margin-top: 0.76rem;
+}
+
+.cui-ecommerce-product-option {
+    margin-bottom: 1.53rem;
+}
+
+.cui-ecommerce-product-option:last-child {
+    margin-bottom: 0.38rem;
+}
+
+.cui-ecommerce-product-option_title {
+    color: #74708d;
+    margin-bottom: 0.76rem;
+}
+
+.cui-ecommerce-product-price {
+    font-size: 2.38rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.cui-ecommerce-product-price-before {
+    display: inline-block;
+    margin-left: 0.76rem;
+    font-size: 1.38rem;
+    text-decoration: line-through;
+    color: #74708d;
+    position: relative;
+    top: -0.24rem;
+    font-weight: normal;
+}
+
+.cui-ecommerce-product-sku {
+    float: right;
+    color: #74708d;
+    text-align: right;
+    margin-top: 0.23rem;
+}
+
+.cui-ecommerce-product-rating {
+    margin-top: 0.38rem;
+    color: #f2a654;
+    font-size: 1.38rem;
+}
+
+.cui-ecommerce-product-controls .btn {
+    padding: 1.15rem 3.07rem !important;
+}
+
+.cui-ecommerce-product-controls .btn-link {
+    margin-top: 0.23rem;
+    padding: 1.15rem 1.15rem !important;
+}
+
+.cui-ecommerce-product-photos {
+    margin-left: -1.54rem;
+    margin-top: -1.16rem;
+}
+
+.cui-ecommerce-product-photos-item {
+    margin-left: 1.53rem;
+    width: -webkit-calc(25% - 1.42rem);
+    width: calc(25% - 1.42rem);
+    text-align: center;
+    float: left;
+    border: 1px solid #e4e9f0;
+    -webkit-border-radius: 0.38pxrem;
+            border-radius: 0.38pxrem;
+    overflow: hidden;
+    margin-bottom: 1.53rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.cui-ecommerce-product-photos-item img {
+    width: 5.38rem;
+    max-width: 100%;
+}
+
+.cui-ecommerce-product-photos-item-active {
+    border-color: #0190fe;
+}
+
+.cui-ecommerce-product-main-title {
+    margin-top: 1.53rem;
+    font-size: 2.76rem;
+}
+
+.cui-ecommerce-product-info {
+    margin-top: 3.07rem;
+}
+
+/*  ECOMMERCE: PRODUCTS CATALOG  */
+.cui-ecommerce-catalog-item {
+    padding: 1.53rem;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    border: 1px solid #e4e9f0;
+    margin-bottom: 2.69rem;
+    position: relative;
+    background: #fff;
+}
+
+.cui-ecommerce-catalog-item-status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 1.92rem;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-color: #fb434a transparent transparent #fb434a;
+    z-index: 10;
+}
+
+.cui-ecommerce-catalog-item-status-title {
+    position: relative;
+    top: -0.47rem;
+    left: -1.31rem;
+    display: block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 0.76rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.cui-ecommerce-catalog-item-img {
+    position: relative;
+    text-align: center;
+    height: 19.23rem;
+    overflow: hidden;
+}
+
+.cui-ecommerce-catalog-item-img a {
+    display: block;
+}
+
+.cui-ecommerce-catalog-item-img a img {
+    min-height: 19.23rem;
+    max-height: 19.23rem;
+    max-width: 100%;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    -o-transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.cui-ecommerce-catalog-item-img a:hover img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.cui-ecommerce-catalog-item-title {
+    font-size: 1.23rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 1px solid #e4e9f0;
+    padding-top: 1.15rem;
+    padding-right: 7.69rem;
+    position: relative;
+}
+
+.cui-ecommerce-catalog-item-title a {
+    display: block;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cui-ecommerce-catalog-item-descr {
+    padding-right: 7.69rem;
+    font-style: italic;
+    color: #393749;
+}
+
+.cui-ecommerce-catalog-item-descr-sizes {
+    font-style: normal;
+    margin: 1.15rem 0 0.76rem;
+}
+
+.cui-ecommerce-catalog-item-descr-sizes span {
+    display: inline-block;
+    margin-right: 0.38rem;
+    border: 1px solid #d2d9e5;
+    line-height: 1.07rem;
+    -webkit-border-radius: 1.53rem;
+            border-radius: 1.53rem;
+    padding: 0.23rem;
+    min-width: 2.3rem;
+    text-align: center;
+    margin-bottom: 0.38rem;
+}
+
+.cui-ecommerce-catalog-item-price {
+    font-size: 2rem;
+    position: absolute;
+    top: 0.76rem;
+    right: 0;
+    text-align: right;
+}
+
+.cui-ecommerce-catalog-item-price-old {
+    font-size: 1.23rem;
+    font-weight: normal;
+    text-decoration: line-through;
+    color: #74708d;
+}
+
+.cui-ecommerce-catalog-item-like {
+    position: absolute;
+    z-index: 2;
+    top: 0.76rem;
+    right: 0.76rem;
+    font-size: 1.84rem;
+    cursor: pointer;
+    color: #393749;
+}
+
+.cui-ecommerce-catalog-item-like i {
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.2;
+    color: #74708d;
+}
+
+.cui-ecommerce-catalog-item-like:hover i {
+    opacity: 0.4;
+}
+
+.cui-ecommerce-catalog-item-like-selected i {
+    opacity: 1 !important;
+}
+
+.cui-ecommerce-catalog-item-img-remove {
+    position: absolute;
+    z-index: 100;
+    top: 0.76rem;
+    right: 1.15rem;
+}

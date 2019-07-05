@@ -1,0 +1,54 @@
+.cui-payment-transaction {
+    padding: 1.15rem 1.92rem;
+    position: relative;
+    border-left: 4px solid #fb434a !important;
+}
+
+.cui-payment-transaction-income {
+    border-left: 4px solid #46be8a !important;
+}
+
+.cui-payment-transaction-income .cui-payment-transaction-icon i {
+    color: #46be8a;
+}
+
+.cui-payment-transaction-icon {
+    position: absolute;
+    top: 1.07rem;
+    right: 1.53rem;
+}
+
+.cui-payment-transaction-icon i {
+    font-size: 1.84rem;
+    color: #fb434a;
+}
+
+.cui-payment-transaction-amount {
+    font-size: 1.38rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.cui-payment-transaction-info {
+    font-size: 1rem;
+    color: #74708d;
+    margin-left: 0.38rem;
+}
+
+@media (max-width: 991px) {
+    .cui-payment-transaction-info {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.cui-payment-transaction-footer {
+    color: #74708d;
+    padding: 0.76rem 1.92rem;
+    margin: 0.76rem -1.93rem -1.16rem -1.85rem;
+    font-style: italic;
+    font-size: 1rem;
+    background: #f9fafc;
+    -webkit-border-radius: 0 0 7px 7px;
+            border-radius: 0 0 7px 7px;
+}

@@ -1,0 +1,51 @@
+.cui-config-borderless .card {
+    border: none;
+}
+
+.cui-config-borderless .card.cui-utils-sortable-collapsed .card-header {
+    padding-bottom: 1.53rem;
+}
+
+.cui-config-borderless .card-header {
+    padding-top: 1.53rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.cui-config-borderless .card-footer {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.cui-config-borderless .cui-utils-title {
+    text-transform: uppercase;
+    font-size: 1.23rem;
+}
+
+.cui-config-squared-corners .card,
+.cui-config-squared-corners .cui-footer,
+.cui-config-squared-corners .cui-utils-widget {
+    -webkit-border-radius: 0 !important;
+            border-radius: 0 !important;
+}
+
+.cui-config-fixed-width > .cui-layout {
+    max-width: 1420px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .cui-config-fixed-width .cui-utils-content {
+        padding-right: 0;
+    }
+    .cui-config-fixed-width .cui-footer {
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 1435px) {
+    .cui-config-fixed-width .cui-menu-left-inner,
+    .cui-config-fixed-width .cui-menu-top-inner {
+        border-left: 1px solid #e4e9f0;
+    }
+}

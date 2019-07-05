@@ -2,401 +2,699 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
 <head>
-    <title>Admin Dashboard HTML Template</title>
-    <meta charset="utf-8">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta content="template language" name="keywords">
-    <meta content="Tamerlan Soziev" name="author">
-    <meta content="Admin dashboard html template" name="description">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="favicon.png" rel="shortcut icon">
-    <link href="apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
-    <link th:href="@{/bower_components/select2/dist/css/select2.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/dropzone/dist/dropzone.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/fullcalendar/dist/fullcalendar.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/slick-carousel/slick/slick.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+        Clean UI HTML Admin Template
+    </title>
+    <link th:href="@{/components/dummy-assets/common/img/favicon.png}" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
 
-    <!-- DevExtreme themes -->
-    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.1.3/css/dx.common.css">
-    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.1.3/css/dx.light.css">
+    <!-- VENDORS -->
+    <!-- v2.0.2 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap/dist/css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/perfect-scrollbar/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/ladda/dist/ladda-themeless.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap-select/dist/css/bootstrap-select.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/select2/dist/css/select2.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/tempus-dominus-bs4/build/css/tempusdominus-bootstrap-4.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/fullcalendar/dist/fullcalendar.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap-sweetalert/dist/sweetalert.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/summernote/dist/summernote.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/owl.carousel/dist/assets/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/ionrangeslider/css/ion.rangeSlider.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/fc-3.2.5/r-2.2.2/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/c3/c3.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/chartist/dist/chartist.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/nprogress/nprogress.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/jquery-steps/demo/css/jquery.steps.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/dropify/dist/css/dropify.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-linearicons/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-icomoon/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-awesome/css/font-awesome.min.css}">
+    <script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+    <script th:src="@{/vendors/popper.js/dist/umd/popper.js}"></script>
+    <script th:src="@{/vendors/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap/dist/js/bootstrap.js}"></script>
+    <script th:src="@{/vendors/jquery-mousewheel/jquery.mousewheel.min.js}"></script>
+    <script th:src="@{/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.js}"></script>
+    <script th:src="@{/vendors/spin.js/spin.js}"></script>
+    <script th:src="@{/vendors/ladda/dist/ladda.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-select/dist/js/bootstrap-select.min.js}"></script>
+    <script th:src="@{/vendors/select2/dist/js/select2.full.min.js}"></script>
+    <script th:src="@{/vendors/html5-form-validation/dist/jquery.validation.min.js}"></script>
+    <script th:src="@{/vendors/jquery-typeahead/dist/jquery.typeahead.min.js}"></script>
+    <script th:src="@{/vendors/jquery-mask-plugin/dist/jquery.mask.min.js}"></script>
+    <script th:src="@{/vendors/autosize/dist/autosize.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-show-password/bootstrap-show-password.min.js}"></script>
+    <script th:src="@{/vendors/moment/min/moment.min.js}"></script>
+    <script th:src="@{/vendors/tempus-dominus-bs4/build/js/tempusdominus-bootstrap-4.min.js}"></script>
+    <script th:src="@{/vendors/fullcalendar/dist/fullcalendar.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-sweetalert/dist/sweetalert.min.js}"></script>
+    <script th:src="@{/vendors/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js}"></script>
+    <script th:src="@{/vendors/summernote/dist/summernote.min.js}"></script>
+    <script th:src="@{/vendors/owl.carousel/dist/owl.carousel.min.js}"></script>
+    <script th:src="@{/vendors/ionrangeslider/js/ion.rangeSlider.min.js}"></script>
+    <script th:src="@{/vendors/nestable/jquery.nestable.js}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fc-3.2.5/r-2.2.2/datatables.min.js"></script>
+    <script th:src="@{/vendors/editable-table/mindmup-editabletable.js}"></script>
+    <script th:src="@{/vendors/d3/d3.min.js}"></script>
+    <script th:src="@{/vendors/c3/c3.min.js}"></script>
+    <script th:src="@{/vendors/chartist/dist/chartist.min.js}"></script>
+    <script th:src="@{/vendors/peity/jquery.peity.min.js}"></script>
+    <script th:src="@{/vendors/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js}"></script>
+    <script th:src="@{/vendors/jquery-countTo/jquery.countTo.js}"></script>
+    <script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+    <script th:src="@{/vendors/jquery-steps/build/jquery.steps.min.js}"></script>
+    <script th:src="@{/vendors/chart.js/dist/Chart.bundle.min.js}"></script>
+    <script th:src="@{/vendors/dropify/dist/js/dropify.min.js}"></script>
+    <script th:src="@{/vendors/d3-dsv/dist/d3-dsv.js}"></script>
+    <script th:src="@{/vendors/d3-time-format/dist/d3-time-format.js}"></script>
+    <script th:src="@{/vendors/techan/dist/techan.min.js}"></script>
 
-    <link th:href="@{/css/main.css?version=4.4.0}" rel="stylesheet">
+    <!-- CLEAN UI HTML ADMIN TEMPLATE MODULES-->
+    <!-- v2.0.2 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/components/core/common/core.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/core/widgets/widgets.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/vendors/common/vendors.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/settings/common/settings.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/settings/themes/themes.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-left/common/menu-left.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-top/common/menu-top.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-right/common/menu-right.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/top-bar/common/top-bar.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/breadcrumbs/common/breadcrumbs.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/footer/common/footer.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/pages/common/pages.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/ecommerce/common/ecommerce.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/apps/common/apps.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/blog/common/blog.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/youtube/common/youtube.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/github/common/github.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/docs/common/docs.cleanui.css}">
+    <script th:src="@{/components/menu-left/common/menu-left.cleanui.js}"></script>
+    <script th:src="@{/components/menu-top/common/menu-top.cleanui.js}"></script>
+    <script th:src="@{/components/menu-right/common/menu-right.cleanui.js}"></script>
+    <script th:src="@{/components/blog/common/blog.cleanui.js}"></script>
+    <script th:src="@{/components/github/common/github.cleanui.js}"></script>
+
+
+    <!-- PRELOADER STYLES-->
+    <style>
+        .cui-initial-loading {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDFweCIgIGhlaWdodD0iNDFweCIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0ibGRzLXJvbGxpbmciPiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiBmaWxsPSJub25lIiBuZy1hdHRyLXN0cm9rZT0ie3tjb25maWcuY29sb3J9fSIgbmctYXR0ci1zdHJva2Utd2lkdGg9Int7Y29uZmlnLndpZHRofX0iIG5nLWF0dHItcj0ie3tjb25maWcucmFkaXVzfX0iIG5nLWF0dHItc3Ryb2tlLWRhc2hhcnJheT0ie3tjb25maWcuZGFzaGFycmF5fX0iIHN0cm9rZT0iIzAxOTBmZSIgc3Ryb2tlLXdpZHRoPSIxMCIgcj0iMzUiIHN0cm9rZS1kYXNoYXJyYXk9IjE2NC45MzM2MTQzMTM0NjQxNSA1Ni45Nzc4NzE0Mzc4MjEzOCIgdHJhbnNmb3JtPSJyb3RhdGUoODQgNTAgNTApIj4gICAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgY2FsY01vZGU9ImxpbmVhciIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCIga2V5VGltZXM9IjA7MSIgZHVyPSIxcyIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPiAgICA8L2NpcmNsZT4gIDwvc3ZnPg==);
+            background-color: #f2f4f8;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.cui-initial-loading').delay(200).fadeOut(400)
+        })
+    </script>
 </head>
-<body class="menu-position-top full-screen">
-<div class="all-wrapper solid-bg-all">
-    <div class="search-with-suggestions-w">
-        <div class="search-with-suggestions-modal">
-            <div class="element-search">
-                <input class="search-suggest-input" placeholder="Start typing to search..." type="text">
-                <div class="close-search-suggestions">
-                    <i class="os-icon os-icon-x"></i>
-                </div>
-                </input>
+<body class="cui-config-borderless cui-menu-colorful cui-theme-light cui-menu-left-shadow">
+<div class="cui-initial-loading"></div>
+<div class="cui-layout cui-layout-has-sider">
+    <div class="cui-menu-right">
+        <div class="cui-menu-right-inner">
+            <div class="cui-menu-right-header">
+                <span class="fa fa-times pull-right cui-menu-right-action-toggle"><!-- --></span>
+                Theme Settings
             </div>
-            <div class="search-suggestions-group">
-                <div class="ssg-header">
-                    <div class="ssg-icon">
-                        <div class="os-icon os-icon-box"></div>
+            <div class="cui-menu-right-content">
+                <div class="cui-menu-right-descr">
+                    This module "block-menu-right" gives possibility to construct custom blocks with any
+                    widgets, components and elements inside, like this theme settings
+                </div>
+                <div class="cui-menu-right-label">
+                    Theme Style
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="" /> Dark
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="cui-theme-light" /> Light
+                            </label>
+                        </div>
                     </div>
-                    <div class="ssg-name">
-                        Projects
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="cui-theme-green" /> Green
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="cui-theme-blue" /> Blue
+                            </label>
+                        </div>
                     </div>
-                    <div class="ssg-info">
-                        24 Total
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="cui-theme-red" /> Red
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-theme" value="cui-theme-orange" /> Orange
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="ssg-content">
-                    <div class="ssg-items ssg-items-boxed">
-                        <a class="ssg-item" href="users_profile_big.html">
-                            <div class="item-media" style="background-image: url(img/company6.png)"></div>
-                            <div class="item-name">
-                                Integ<span>ration</span> with API
-                            </div>
-                        </a><a class="ssg-item" href="users_profile_big.html">
-                        <div class="item-media" style="background-image: url(img/company7.png)"></div>
-                        <div class="item-name">
-                            Deve<span>lopm</span>ent Project
+                <div class="cui-menu-right-label">
+                    Menu Shadow
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-shadow" value="cui-menu-left-shadow" /> On
+                            </label>
                         </div>
-                    </a>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-shadow" value="" /> Off
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="search-suggestions-group">
-                <div class="ssg-header">
-                    <div class="ssg-icon">
-                        <div class="os-icon os-icon-users"></div>
-                    </div>
-                    <div class="ssg-name">
-                        Customers
-                    </div>
-                    <div class="ssg-info">
-                        12 Total
+                <div class="cui-menu-right-label">
+                    Borderless Cards
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-borderless" value="cui-config-borderless" /> On
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-borderless" value="" /> Off
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="ssg-content">
-                    <div class="ssg-items ssg-items-list">
-                        <a class="ssg-item" href="users_profile_big.html">
-                            <div class="item-media" style="background-image: url(img/avatar1.jpg)"></div>
-                            <div class="item-name">
-                                John Ma<span>yer</span>s
-                            </div>
-                        </a><a class="ssg-item" href="users_profile_big.html">
-                        <div class="item-media" style="background-image: url(img/avatar2.jpg)"></div>
-                        <div class="item-name">
-                            Th<span>omas</span> Mullier
+                <div class="cui-menu-right-label">
+                    Squared Corners
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-corners" value="cui-config-squared-corners" /> On
+                            </label>
                         </div>
-                    </a><a class="ssg-item" href="users_profile_big.html">
-                        <div class="item-media" style="background-image: url(img/avatar3.jpg)"></div>
-                        <div class="item-name">
-                            Kim C<span>olli</span>ns
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-corners" value="" /> Off
+                            </label>
                         </div>
-                    </a>
                     </div>
                 </div>
-            </div>
-            <div class="search-suggestions-group">
-                <div class="ssg-header">
-                    <div class="ssg-icon">
-                        <div class="os-icon os-icon-folder"></div>
-                    </div>
-                    <div class="ssg-name">
-                        Files
-                    </div>
-                    <div class="ssg-info">
-                        17 Total
+                <div class="cui-menu-right-label">
+                    Fixed Width
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-boxed" value="cui-config-fixed-width" /> On
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-boxed" value="" /> Off
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="ssg-content">
-                    <div class="ssg-items ssg-items-blocks">
-                        <a class="ssg-item" href="#">
-                            <div class="item-icon">
-                                <i class="os-icon os-icon-file-text"></i>
-                            </div>
-                            <div class="item-name">
-                                Work<span>Not</span>e.txt
-                            </div>
-                        </a><a class="ssg-item" href="#">
-                        <div class="item-icon">
-                            <i class="os-icon os-icon-film"></i>
+                <div class="cui-menu-right-label">
+                    Colorful Menu
+                </div>
+                <div class="cui-menu-right-setting cui-menu-right-example-option">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-colorful" value="cui-menu-left-colorful" /> On
+                            </label>
                         </div>
-                        <div class="item-name">
-                            V<span>ideo</span>.avi
+                        <div class="btn-group">
+                            <label class="btn btn-default">
+                                <input type="radio" name="options-colorful" value="" /> Off
+                            </label>
                         </div>
-                    </a><a class="ssg-item" href="#">
-                        <div class="item-icon">
-                            <i class="os-icon os-icon-database"></i>
-                        </div>
-                        <div class="item-name">
-                            User<span>Tabl</span>e.sql
-                        </div>
-                    </a><a class="ssg-item" href="#">
-                        <div class="item-icon">
-                            <i class="os-icon os-icon-image"></i>
-                        </div>
-                        <div class="item-name">
-                            wed<span>din</span>g.jpg
-                        </div>
-                    </a>
-                    </div>
-                    <div class="ssg-nothing-found">
-                        <div class="icon-w">
-                            <i class="os-icon os-icon-eye-off"></i>
-                        </div>
-                        <span>No files were found. Try changing your query...</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="layout-w">
-        <div th:replace="fragments/menu.html :: menu_top"></div>
-        <div class="content-w">
-            <!--------------------
-            START - Top Bar
-            -------------------->
-            <div class="top-bar color-scheme-transparent d-none">
-                <!--------------------
-                START - Top Menu Controls
-                -------------------->
-                <div class="top-menu-controls">
-                    <div class="element-search autosuggest-search-activator">
-                        <input placeholder="Start typing to search..." type="text">
-                    </div>
-                    <!--------------------
-                    START - Messages Link in secondary top menu
-                    -------------------->
-                    <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left">
-                        <i class="os-icon os-icon-mail-14"></i>
-                        <div class="new-messages-count">
-                            12
-                        </div>
-                        <div class="os-dropdown light message-list">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="user-avatar-w">
-                                            <img alt="" src="img/avatar1.jpg">
-                                        </div>
-                                        <div class="message-content">
-                                            <h6 class="message-from">
-                                                John Mayers
-                                            </h6>
-                                            <h6 class="message-title">
-                                                Account Update
-                                            </h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="user-avatar-w">
-                                            <img alt="" src="img/avatar2.jpg">
-                                        </div>
-                                        <div class="message-content">
-                                            <h6 class="message-from">
-                                                Phil Jones
-                                            </h6>
-                                            <h6 class="message-title">
-                                                Secutiry Updates
-                                            </h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="user-avatar-w">
-                                            <img alt="" src="img/avatar3.jpg">
-                                        </div>
-                                        <div class="message-content">
-                                            <h6 class="message-from">
-                                                Bekky Simpson
-                                            </h6>
-                                            <h6 class="message-title">
-                                                Vacation Rentals
-                                            </h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="user-avatar-w">
-                                            <img alt="" src="img/avatar4.jpg">
-                                        </div>
-                                        <div class="message-content">
-                                            <h6 class="message-from">
-                                                Alice Priskon
-                                            </h6>
-                                            <h6 class="message-title">
-                                                Payment Confirmation
-                                            </h6>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--------------------
-                    END - Messages Link in secondary top menu
-                    --------------------><!--------------------
-              START - Settings Link in secondary top menu
-              -------------------->
-                    <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
-                        <i class="os-icon os-icon-ui-46"></i>
-                        <div class="os-dropdown">
-                            <div class="icon-w">
-                                <i class="os-icon os-icon-ui-46"></i>
+    <nav th:replace="fragments/menu_left :: menu_left"></nav>
+    <div class="cui-layout">
+        <div class="cui-layout-header">
+            <div class="cui-topbar">
+                <!-- left aligned items -->
+                <div class="cui-topbar-left">
+                    <div class="cui-topbar-item">
+                        <div class="dropdown">
+                            <a href="" class="dropdown-toggle text-nowrap" data-toggle="dropdown" aria-expanded="false">
+                                <i class="icmn-folder-open mr-2"></i>
+                                <span class="d-none d-xl-inline-block"><strong>Issues History</strong></span>
+                            </a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" href="javascript:void(0)">Current search</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Search for issues</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-header">Opened</div>
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-checkmark"></i> CLNUI-253 Project implemen...</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-checkmark"></i> CLNUI-234 Active history iss...</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-clock"></i> CLNUI-424 Ionicons intergrat...</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0)">More...</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-header">Filters</div>
+                                <a class="dropdown-item" href="javascript:void(0)">My open issues</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Reported by me</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)">Import issues from CSV</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-cog"></i> Settings</a
+                                >
                             </div>
-                            <ul>
-                                <li>
-                                    <a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
-                                </li>
-                                <li>
-                                    <a href="users_profile_small.html"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
-                                </li>
-                                <li>
-                                    <a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
-                                </li>
-                                <li>
-                                    <a href="users_profile_small.html"><i class="os-icon os-icon-ui-15"></i><span>Cancel Account</span></a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                    <!--------------------
-                    END - Settings Link in secondary top menu
-                    --------------------><!--------------------
-              START - User avatar and menu in secondary top menu
-              -------------------->
-                    <div class="logged-user-w">
-                        <div class="logged-user-i">
-                            <div class="avatar-w">
-                                <img alt="" src="img/avatar1.jpg">
+                    <div class="cui-topbar-item">
+                        <div class="dropdown">
+                            <a href="" class="dropdown-toggle text-nowrap" data-toggle="dropdown" aria-expanded="false">
+                                <i class="icmn-database mr-2"></i>
+                                <span class="d-none d-xl-inline-block"><strong>Project Management</strong></span>
+                            </a>
+                            <div class="dropdown-menu" role="menu">
+                                <div class="dropdown-header">Active</div>
+                                <a class="dropdown-item" href="javascript:void(0)">Project Management</a>
+                                <a class="dropdown-item" href="javascript:void(0)">User Inetrface Development</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Documentation</a>
+                                <div class="dropdown-header">Inactive</div>
+                                <a class="dropdown-item" href="javascript:void(0)">Marketing</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-cog"></i> Settings</a
+                                >
                             </div>
-                            <div class="logged-user-menu color-style-bright">
-                                <div class="logged-user-avatar-info">
-                                    <div class="avatar-w">
-                                        <img alt="" src="img/avatar1.jpg">
+                        </div>
+                    </div>
+                    <div class="cui-topbar-item">
+                        <div class="cui-topbar-search">
+                            <i class="icmn-search"> <!-- --></i>
+                            <input type="text" id="livesearch-input" placeholder="Type to search..." />
+                        </div>
+                        <div class="cui-topbar-livesearch">
+                            <button class="cui-topbar-livesearch-close" type="button">
+                                <i class="icmn-cross"></i>
+                            </button>
+                            <div class="container-fluid">
+                                <div class="cui-topbar-livesearch-wrapper">
+                                    <div class="cui-topbar-livesearch-logo-container">
+                                        <img
+                                                class="cui-topbar-livesearch-logo"
+                                                src="../../components/dummy-assets/common/img/logo.png"
+                                                alt=""
+                                        />
                                     </div>
-                                    <div class="logged-user-info-w">
-                                        <div class="logged-user-name">
-                                            Maria Gomez
+                                    <input
+                                            type="search"
+                                            id="livesearch-input-inner"
+                                            class="cui-topbar-livesearch-input"
+                                            placeholder="Type to search..."
+                                    />
+                                    <ul class="cui-topbar-livesearch-options">
+                                        <li class="cui-topbar-livesearch-option">
+                                            <label class="cui-utils-control cui-utils-control-checkbox"
+                                            >Search within page
+                                                <input type="checkbox" checked="checked" />
+                                                <span class="cui-utils-control-indicator"></span>
+                                            </label>
+                                        </li>
+                                        <li class="cui-topbar-livesearch-option">Press enter to search</li>
+                                    </ul>
+                                    <div class="cui-topbar-livesearch-results">
+                                        <div class="cui-topbar-livesearch-results-title">
+                                            <span>Pages Search Results</span>
                                         </div>
-                                        <div class="logged-user-role">
-                                            Administrator
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div
+                                                            class="cui-topbar-livesearch-result-thumb"
+                                                            style="background-image: url('../../components/dummy-assets/common/img/photos/1.jpeg')"
+                                                    >
+                                                        #1
+                                                    </div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div
+                                                            class="cui-topbar-livesearch-result-thumb"
+                                                            style="background-image: url('../../components/dummy-assets/common/img/photos/2.jpeg')"
+                                                    >
+                                                        KF
+                                                    </div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div
+                                                            class="cui-topbar-livesearch-result-thumb"
+                                                            style="background-image: url('../../components/dummy-assets/common/img/photos/3.jpeg')"
+                                                    >
+                                                        GF
+                                                    </div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div class="cui-topbar-livesearch-result-thumb">01</div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div class="cui-topbar-livesearch-result-thumb">02</div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cui-topbar-livesearch-result-content">
+                                                    <div class="cui-topbar-livesearch-result-thumb">03</div>
+                                                    <div class="cui-topbar-livesearch-result">
+                                                        <div class="cui-topbar-livesearch-result-text">
+                                                            Text from input field must be here
+                                                        </div>
+                                                        <div class="cui-topbar-livesearch-result-source">In some partition</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-icon">
-                                    <i class="os-icon os-icon-wallet-loaded"></i>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="apps_email.html"><i class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!--------------------
-                    END - User avatar and menu in secondary top menu
-                    -------------------->
                 </div>
-                <!--------------------
-                END - Top Menu Controls
-                -------------------->
+                <!-- right aligned items -->
+                <div class="cui-topbar-right">
+                    <div class="cui-topbar-item d-none d-md-block">
+                        <a
+                                href="https://themeforest.net/item/clean-ui-html-bootstrap-admin-template/22827565?ref=mediatec_software"
+                                target="_blank"
+                                class="btn btn-sm btn-danger"
+                        >Buy Pro 21$</a
+                        >
+                    </div>
+                    <div class="cui-topbar-item d-none d-lg-block ml-0">
+                        <div class="cui-topbar-mini-chart text-nowrap">
+                            Server Load:
+                            <div class="cui-topbar-mini-chart-inner">
+                                <i style="height: 30%;"></i>
+                                <i style="height: 78%;"></i>
+                                <i style="height: 10%;"></i>
+                                <i style="height: 46%;"></i>
+                                <i style="height: 26%;"></i>
+                                <i style="height: 29%;"></i>
+                                <i style="height: 50%;"></i>
+                                <i style="height: 89%;"></i>
+                                <i style="height: 30%;"></i>
+                            </div>
+                            20%
+                        </div>
+                    </div>
+                    <div class="cui-topbar-item">
+                        <div class="dropdown">
+                            <a href="" class="dropdown-toggle text-nowrap" data-toggle="dropdown" aria-expanded="false">
+                                <i class="menu-notification-icon icmn-home"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <div class="cui-topbar-activity">
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-star-full"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">now</span>
+                                                <a href="javascript: void(0);"
+                                                >Update Status: <span class="badge badge-danger">New</span></a
+                                                >
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                Failed to get available update data. To ensure the proper functioning of your
+                                                application, update now.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-stack"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">24 min ago</span>
+                                                <a href="javascript: void(0);"
+                                                >Income: <span class="badge badge-default">$299.00</span></a
+                                                >
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                Failed to get available update data. To ensure the proper functioning of your
+                                                application, update now.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-list"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">30 min ago</span>
+                                                <a href="javascript: void(0);">Inbox Message</a>
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                From: <a href="javascript: void(0);">David Bowie</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-home"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">now</span>
+                                                <a href="javascript: void(0);"
+                                                >Update Status: <span class="badge badge-primary">New</span></a
+                                                >
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                Failed to get available update data. To ensure the proper functioning of your
+                                                application, update now.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-loop"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">24 min ago</span>
+                                                <a href="javascript: void(0);"
+                                                >Income: <span class="badge badge-warning">$299.00</span></a
+                                                >
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                Failed to get available update data. To ensure the proper functioning of your
+                                                application, update now.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cui-topbar-activity-item">
+                                        <i class="cui-topbar-activity-icon icmn-cog"></i>
+                                        <div class="cui-topbar-activity-inner">
+                                            <div class="cui-topbar-activity-title">
+                                                <span class="pull-right">30 min ago</span>
+                                                <a href="javascript: void(0);">Inbox Message</a>
+                                            </div>
+                                            <div class="cui-topbar-activity-descr">
+                                                From: <a href="javascript: void(0);">David Bowie</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-topbar-item">
+                        <div class="dropdown cui-topbar-avatar-dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="cui-topbar-avatar">
+            <img src="../../components/dummy-assets/common/img/avatars/1.jpg" alt="" />
+          </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-user"></i> Profile</a
+                                >
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-header">Home</div>
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-circle-right"></i> System Dashboard</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-circle-right"></i> User Boards</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-circle-right"></i> Issue Navigator
+                                    <span class="badge badge-success font-size-11 ml-2">25 New</span></a
+                                >
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"
+                                ><i class="dropdown-icon icmn-exit"></i> Logout</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-topbar-item">
+                        <div class="cui-topbar-menu-button cui-menu-right-action-toggle">
+                            <i class="fa fa-bars"> <!-- --></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--------------------
-            END - Top Bar
-            --------------------><!--------------------
-          START - Breadcrumbs
-          -------------------->
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="index.html">Products</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <span>Laptop with retina screen</span>
-                </li>
-            </ul>
-            <!--------------------
-            END - Breadcrumbs
-            -------------------->
-            <div class="content-i">
+
+            <script>
+                ;(function($) {
+                    'use strict'
+                    $(function() {
+                        ///////////////////////////////////////////////////////////
+                        // livesearch scripts
+
+                        var livesearch = $('.cui-topbar-livesearch')
+                        var close = $('.cui-topbar-livesearch-close')
+                        var visibleClass = 'cui-topbar-livesearch-visible'
+                        var input = $('#livesearch-input')
+                        var inputInner = $('#livesearch-input-inner')
+
+                        function setHidden() {
+                            livesearch.removeClass(visibleClass)
+                        }
+                        function handleKeyDown(e) {
+                            const key = event.keyCode.toString()
+                            if (key === '27') {
+                                setHidden()
+                            }
+                        }
+                        input.on('focus', function() {
+                            livesearch.addClass(visibleClass)
+                            setTimeout(function() {
+                                inputInner.focus()
+                            }, 200)
+                        })
+                        close.on('click', setHidden)
+                        document.addEventListener('keydown', handleKeyDown, false)
+                    })
+                })(jQuery)
+            </script>
+        </div>
+        <div class="cui-layout-content">
+            <th:block layout:fragment="page_top_nav"></th:block>
+            <div class="cui-utils-content">
+                <!-- START: dashboard beta -->
                 <th:block layout:fragment="content"></th:block>
+                <!-- END: dashboard alpha -->
+
+                <!-- START: page scripts -->
+                <script>
+                    ;(function($){
+                        'use strict'
+                        $(function() {
+                            ///////////////////////////////////////////////////////////
+                            // jquery ui sortable
+                            $('#left-col, #right-col, #bottom-col').each(function() {
+                                $(this).sortable({
+                                    // connect left and right containers
+                                    connectWith: '.cui-utils-sortable',
+                                    tolerance: 'pointer',
+                                    scroll: true,
+
+                                    // set initial order from localStorage
+                                    create: function() {
+                                        var that = $(this),
+                                            id = $(this).attr('id'),
+                                            orderLs = localStorage.getItem('order-' + id)
+
+                                        if (orderLs) {
+                                            var order = orderLs.split(',')
+
+                                            $.each(order, function(key, val) {
+                                                var el = $('[data-order-id=' + val + ']')
+                                                that.append(el)
+                                            })
+                                        }
+                                    },
+
+                                    // save order state on order update to localStorage
+                                    update: function() {
+                                        var orderArray = $(this).sortable('toArray', { attribute: 'data-order-id' }),
+                                            prefix = $(this).attr('id')
+
+                                        localStorage.setItem('order-' + prefix, orderArray)
+                                    },
+
+                                    // handler
+                                    handle: '.card-header'
+                                })
+                            })
+                        })
+                    })(jQuery)
+                </script>
+                <!-- END: page scripts -->
+
             </div>
         </div>
+        <div th:replace="/fragments/footer :: footer_admin"></div>
     </div>
-    <div class="display-type"></div>
 </div>
-<script th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
-<script th:src="@{/bower_components/popper.js/dist/umd/popper.min.js}"></script>
-<script th:src="@{/bower_components/moment/moment.js}"></script>
-<script th:src="@{/bower_components/chart.js/dist/Chart.min.js}"></script>
-<script th:src="@{/bower_components/select2/dist/js/select2.full.min.js}"></script>
-<script th:src="@{/bower_components/jquery-bar-rating/dist/jquery.barrating.min.js}"></script>
-<script th:src="@{/bower_components/ckeditor/ckeditor.js}"></script>
-<script th:src="@{/bower_components/bootstrap-validator/dist/validator.min.js}"></script>
-<script th:src="@{/bower_components/bootstrap-daterangepicker/daterangepicker.js}"></script>
-<script th:src="@{/bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js}"></script>
-<script th:src="@{/bower_components/dropzone/dist/dropzone.js}"></script>
-<script th:src="@{/bower_components/editable-table/mindmup-editabletable.js}"></script>
-<script th:src="@{/bower_components/datatables.net/js/jquery.dataTables.min.js}"></script>
-<script th:src="@{/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
-<script th:src="@{/bower_components/fullcalendar/dist/fullcalendar.min.js}"></script>
-<script th:src="@{/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js}"></script>
-<script th:src="@{/bower_components/tether/dist/js/tether.min.js}"></script>
-<script th:src="@{/bower_components/slick-carousel/slick/slick.min.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/util.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/alert.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/button.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/carousel.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/collapse.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/dropdown.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/modal.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/tab.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/tooltip.js}"></script>
-<script th:src="@{/bower_components/bootstrap/js/dist/popover.js}"></script>
-<!--<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.0.min.js"></script>-->
-
-<!-- Reference either Knockout or AngularJS, if you do -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-
-<!-- DevExtreme library -->
-<script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.1.3/js/dx.all.js"></script>
-<!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.1.3/js/dx.web.js"></script> -->
-<!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.1.3/js/dx.viz.js"></script> -->
-<!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.1.3/js/dx.viz-web.js"></script> -->
-<script th:src="@{/js/demo_customizer.js?version=4.4.0}"></script>
-<script th:src="@{/js/main.js?version=4.4.0}"></script>
-<th:block layout:fragment="script"></th:block>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-XXXXXXX-9', 'auto');
-    ga('send', 'pageview');
-</script>
 </body>
 </html>

@@ -1,0 +1,150 @@
+.cui-info-card {
+    color: #74708d;
+    background-color: #fff;
+    padding: 1.53rem;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    display: block;
+    margin-bottom: 1.53rem;
+}
+
+.cui-info-card-around-border {
+    border: 1px solid #e4e9f0;
+}
+
+.cui-info-card-interactive {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.cui-info-card-white-font {
+    color: #fff;
+}
+
+.cui-info-card-white-font .cui-info-card-icon {
+    color: #fff;
+}
+
+.cui-info-card-digit {
+    float: left;
+    margin-right: 1.53rem;
+    font-size: 3.23rem;
+    width: 4.3rem;
+    line-height: 3.84rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cui-info-card-digit i {
+    font-size: 2.76rem;
+}
+
+.cui-info-card-title {
+    font-weight: bold;
+    font-size: 1.23rem;
+}
+
+.cui-info-card-desc p {
+    margin-bottom: 0;
+}
+
+.cui-info-card-default, .cui-info-card-primary, .cui-info-card-secondary, .cui-info-card-success, .cui-info-card-info, .cui-info-card-warning, .cui-info-card-danger {
+    color: #fff !important;
+}
+
+.cui-info-card-empty {
+    border: 1px solid #e4e9f0;
+}
+
+.cui-info-card-default {
+    background: #acb7bf !important;
+    border-bottom-color: #acb7bf;
+}
+
+.cui-info-card-primary {
+    background: #0190fe !important;
+    border-bottom-color: #0190fe;
+}
+
+.cui-info-card-secondary {
+    background: #6a7a84 !important;
+    border-bottom-color: #6a7a84;
+}
+
+.cui-info-card-success {
+    background: #46be8a !important;
+    border-bottom-color: #46be8a;
+}
+
+.cui-info-card-info {
+    background: #0887c9 !important;
+    border-bottom-color: #0887c9;
+}
+
+.cui-info-card-warning {
+    background: #f39834 !important;
+    border-bottom-color: #f39834;
+}
+
+.cui-info-card-danger {
+    background: #fb434a !important;
+    border-bottom-color: #fb434a;
+}
+
+.cui-info-card-disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.cui-info-card-squared {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.cui-info-card-bordered {
+    padding: 0.38rem 0 0.76rem 0;
+    margin-bottom: -0.93rem;
+    margin-top: 0rem;
+    color: #74708d !important;
+    background-color: #fff !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.cui-info-card-bordered .cui-info-card-digit {
+    font-size: 2.15rem;
+    line-height: 2.92rem;
+    height: 1.84rem;
+    display: block;
+    width: auto;
+    min-width: 3.07rem;
+    margin: 0 0.76rem;
+}
+
+.cui-info-card-bordered .cui-info-card-digit i {
+    font-size: 1.84rem;
+}
+
+.cui-info-card-bordered .cui-info-card-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cui-info-card-bordered .cui-info-card-desc {
+    padding-top: 0;
+}
+
+.cui-info-card-bordered .cui-info-card-desc p {
+    font-size: 0.92rem;
+    margin-bottom: 0.38rem;
+    color: #b8beca;
+}
+
+@media (max-width: 991px) {
+    .cui-info-card {
+        margin-bottom: 1.23rem !important;
+        margin-top: 0 !important;
+    }
+}

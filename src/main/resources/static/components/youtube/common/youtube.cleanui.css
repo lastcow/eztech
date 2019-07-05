@@ -1,0 +1,304 @@
+/*  STYLES FOR "YOUTUBE" MODULE */
+.cui-video-page {
+    max-width: 76.92rem;
+    margin: 0 auto;
+}
+
+.cui-video-page-content img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.cui-video-page-feeds {
+    max-width: 96.15rem;
+    margin: 0 auto;
+}
+
+.cui-video-page .card {
+    padding: 1.23rem;
+}
+
+.cui-video-page-main-content {
+    float: left;
+    width: -webkit-calc(100% - 365px);
+    width: calc(100% - 365px);
+}
+
+@media (max-width: 1199px) {
+    .cui-video-page-main-content {
+        width: 100%;
+    }
+}
+
+.cui-video-page-descr {
+    margin-top: 1.53rem;
+}
+
+.cui-video-page-add-comment {
+    margin-bottom: 0.76rem;
+    padding-bottom: 1.53rem;
+    border-bottom: 1px solid #e4e9f0;
+}
+
+.cui-video-page-comment-user {
+    float: left;
+    padding-top: 1.38rem;
+}
+
+.cui-video-page-comment-form {
+    margin-top: 0.61rem;
+    margin-left: 5.38rem;
+}
+
+.cui-video-page-comment-send {
+    padding-top: 0.76rem;
+    padding-left: 5.38rem;
+}
+
+.cui-video-page-comment-time {
+    font-size: 80%;
+    font-weight: normal;
+}
+
+.cui-video-page-comment-like {
+    padding-top: 0.23rem;
+}
+
+.cui-video-page-sidebar {
+    float: right;
+    width: 350px;
+}
+
+@media (max-width: 1199px) {
+    .cui-video-page-sidebar {
+        display: none;
+    }
+}
+
+.cui-video-page-sidebar-head {
+    padding-bottom: 0.53rem;
+}
+
+.cui-video-page-sidebar-title {
+    display: inline-block;
+}
+
+.cui-video-page-autoplay-text {
+    color: #74708d;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    padding-right: 26px;
+}
+
+.cui-video-page-autoplay-text:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #d2d9e5;
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.cui-video-page-autoplay-text:after {
+    content: '';
+    position: absolute;
+    right: 4.2px;
+    top: 4.3px;
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(25deg) scale(0.2);
+        -ms-transform: rotate(25deg) scale(0.2);
+            transform: rotate(25deg) scale(0.2);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cui-video-page-autoplay-text:hover:before {
+    border-color: #08f;
+}
+
+.cui-video-page-autoplay-checkbox {
+    display: none;
+}
+
+.cui-video-page-autoplay-checkbox:checked + .cui-video-page-autoplay-text:before {
+    background: #08f;
+    border-color: #08f;
+}
+
+.cui-video-page-autoplay-checkbox:checked + .cui-video-page-autoplay-text:after {
+    -webkit-transform: rotate(40deg) scale(1);
+        -ms-transform: rotate(40deg) scale(1);
+            transform: rotate(40deg) scale(1);
+}
+
+.cui-video-page-watch-next {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cui-video-page-next-item-link {
+    display: block;
+}
+
+.cui-video-page-next-item-link:hover .cui-video-page-item-name {
+    color: #08f;
+}
+
+.cui-video-page-next-item-link:hover .cui-video-page-item-author {
+    color: #74708d;
+}
+
+.cui-video-page-next-item {
+    display: block;
+    padding-top: 0.92rem;
+    padding-bottom: 0.92rem;
+    border-top: 1px solid #e4e9f0;
+}
+
+.cui-video-page-item-thumb {
+    float: left;
+}
+
+.cui-video-page-item-thumb-img {
+    width: 170px;
+}
+
+.cui-video-page-item-descr {
+    cursor: pointer;
+    display: block;
+    margin-left: 180px;
+}
+
+.cui-video-page-item-name {
+    font-weight: bolder;
+    display: block;
+    color: #0e0b20;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cui-video-page-item-author {
+    display: block;
+    color: #74708d;
+    font-size: 0.92rem;
+}
+
+.cui-video-page-item-views {
+    display: block;
+    font-size: 0.92rem;
+}
+
+.cui-video-page-item-status {
+    display: block;
+}
+
+.cui-video-page-feed-partition {
+    padding-bottom: 0.76rem;
+    margin-bottom: 2.3rem;
+    position: relative;
+}
+
+.cui-video-page-feed-partition:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0.92rem;
+    height: 1px;
+    background-color: rgba(14, 11, 32, 0.1);
+}
+
+.cui-video-page-partition-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    margin-right: -0.77rem;
+}
+
+@media (max-width: 1199px) {
+    .cui-video-page-partition-content {
+        -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+    }
+}
+
+.cui-video-page-partition-title {
+    font-size: 1.84rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+}
+
+.cui-video-page-partition-thumb {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.16rem;
+    width: 28px;
+    height: 28px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+}
+
+.cui-video-page-next-item-feed {
+    width: 196px;
+    border-top: none;
+    margin-right: 0.76rem;
+}
+
+.cui-video-page-next-item-feed .cui-video-page-item-thumb {
+    float: none;
+}
+
+.cui-video-page-next-item-feed .cui-video-page-item-thumb-img {
+    width: 100%;
+}
+
+.cui-video-page-next-item-feed .cui-video-page-item-descr {
+    margin-left: 0;
+}
+
+.cui-video-page-next-item-feed .cui-video-page-item-name {
+    font-size: 1.07rem;
+    color: #74708d;
+    margin: 0.76rem 0 0.38rem;
+    display: block;
+}

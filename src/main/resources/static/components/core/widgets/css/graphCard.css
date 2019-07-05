@@ -1,0 +1,157 @@
+.cui-graph-card-lonely-value {
+    font-size: 2.53rem;
+    font-weight: 700;
+}
+
+.cui-graph-card-chartist {
+    position: relative;
+}
+
+.cui-graph-card-chartist-centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.cui-graph-card-chartist-primary .ct-series-a .ct-area {
+    fill: #0190fe !important;
+}
+
+.cui-graph-card-chartist-primary .ct-series-a .ct-line {
+    stroke: #0190fe !important;
+}
+
+.cui-graph-card-chartist-primary .ct-series-a .ct-point {
+    stroke: #0190fe !important;
+}
+
+.cui-graph-card-chartist-success .ct-series-a .ct-area {
+    fill: #46be8a !important;
+}
+
+.cui-graph-card-chartist-success .ct-series-a .ct-line {
+    stroke: #46be8a !important;
+}
+
+.cui-graph-card-chartist-success .ct-series-a .ct-point {
+    stroke: #46be8a !important;
+}
+
+.cui-graph-card-chartist-warning .ct-series-a .ct-area {
+    fill: #f39834 !important;
+}
+
+.cui-graph-card-chartist-warning .ct-series-a .ct-line {
+    stroke: #f39834 !important;
+}
+
+.cui-graph-card-chartist-warning .ct-series-a .ct-point {
+    stroke: #f39834 !important;
+}
+
+.cui-graph-card-chartist-danger .ct-series-a .ct-area {
+    fill: #fb434a !important;
+}
+
+.cui-graph-card-chartist-danger .ct-series-a .ct-line {
+    stroke: #fb434a !important;
+}
+
+.cui-graph-card-chartist-danger .ct-series-a .ct-point {
+    stroke: #fb434a !important;
+}
+
+.cui-graph-card-chartist-default .ct-series-a .ct-area {
+    fill: #acb7bf !important;
+}
+
+.cui-graph-card-chartist-default .ct-series-a .ct-line {
+    stroke: #acb7bf !important;
+}
+
+.cui-graph-card-chartist-default .ct-series-a .ct-point {
+    stroke: #acb7bf !important;
+}
+
+.cui-graph-card-table thead th,
+.cui-graph-card-table thead td {
+    border: none;
+    color: #74708d;
+    border-bottom-style: dashed !important;
+}
+
+.cui-graph-card-table td {
+    color: #b8beca;
+    font-weight: 300;
+    border-top-style: dashed;
+}
+
+.cui-graph-card-donut-chartist-with-center-data .ct-label-pie {
+    display: none;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #d2d9e5;
+    -webkit-transform: translate(1%, 6%);
+        -ms-transform: translate(1%, 6%);
+            transform: translate(1%, 6%);
+}
+
+.cui-graph-card-donut-chartist-with-center-data .ct-label-pie:first-of-type {
+    display: block;
+}
+
+.cui-graph-card-donut-chartist-with-center-data .ct-slice-donut {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.cui-graph-card-donut-chartist-example .ct-series-a path {
+    stroke: #46be8a;
+}
+
+.cui-graph-card-donut-chartist-example .ct-series-b path {
+    stroke: #0190fe;
+}
+
+.cui-graph-card-donut-chartist-example .ct-series-c path {
+    stroke: #fb434a;
+}
+
+.cui-graph-card-donut-chartist-area-1 {
+    height: 13.07rem;
+}
+
+.cui-graph-card-donuts {
+    color: #b8beca;
+}
+
+.cui-graph-card-donuts-centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}

@@ -1,0 +1,66 @@
+/* THEMES: BLUE */
+.cui-theme-blue .cui-menu-left-inner {
+    background: #000730;
+}
+
+.cui-theme-blue .cui-menu-left-logo {
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-left-divider {
+    background: rgba(255, 255, 255, 0.17);
+}
+
+.cui-theme-blue .cui-menu-left-item-active > a, .cui-theme-blue .cui-menu-left-item:hover > a, .cui-theme-blue .cui-menu-left-item:active > a, .cui-theme-blue .cui-menu-left-item:focus > a {
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-left-submenu-toggled.cui-menu-left-item {
+    color: #fff;
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-left-submenu-toggled.cui-menu-left-item > a {
+    color: #fff;
+}
+
+.cui-theme-blue .cui-menu-left-submenu-toggled.cui-menu-left-item > a .cui-menu-left-icon {
+    color: #fff;
+}
+
+.cui-theme-blue .cui-menu-left-submenu-toggled.cui-menu-left-item > .cui-menu-left-list {
+    background: #000b51;
+}
+
+.cui-theme-blue .cui-menu-top-inner {
+    background: #000730;
+}
+
+.cui-theme-blue .cui-menu-top-logo {
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-top-divider {
+    background: rgba(255, 255, 255, 0.17);
+}
+
+.cui-theme-blue .cui-menu-top-item-active > a, .cui-theme-blue .cui-menu-top-item:hover > a, .cui-theme-blue .cui-menu-top-item:active > a, .cui-theme-blue .cui-menu-top-item:focus > a {
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-top-submenu-toggled.cui-menu-top-item {
+    color: #fff;
+    background: #000e66;
+}
+
+.cui-theme-blue .cui-menu-top-submenu-toggled.cui-menu-top-item > a {
+    color: #fff;
+}
+
+.cui-theme-blue .cui-menu-top-submenu-toggled.cui-menu-top-item > a .cui-menu-left-icon {
+    color: #fff;
+}
+
+.cui-theme-blue .cui-menu-top-submenu-toggled.cui-menu-top-item > .cui-menu-top-list {
+    background: #000b51;
+}

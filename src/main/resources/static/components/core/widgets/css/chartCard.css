@@ -1,0 +1,38 @@
+.cui-chart-card {
+    padding: 1.15rem 2.3rem 1.53rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cui-chart-card .ct-line {
+    stroke-width: 1px;
+}
+
+.cui-chart-card .ct-series-a .ct-area {
+    fill: rgba(199, 228, 255, 0.5) !important;
+    fill-opacity: 1 !important;
+}
+
+.cui-chart-card .ct-series-a .ct-line {
+    stroke: #004585 !important;
+}
+
+.cui-chart-card-chart {
+    height: 100%;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cui-chart-card-amount {
+    font-size: 2.76rem;
+    color: #0e0b20;
+    margin-bottom: -0.77rem;
+}
+
+.cui-chart-card-title {
+    color: #74708d;
+    text-transform: uppercase;
+    font-weight: bold;
+}

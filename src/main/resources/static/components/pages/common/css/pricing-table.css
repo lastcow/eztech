@@ -1,0 +1,150 @@
+.cui-pricing-table {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3.07rem 0;
+}
+
+.cui-pricing-table-item {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 1;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+    -webkit-flex-basis: 0;
+        -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+    text-align: center;
+    border: 1px solid #e4e9f0;
+    border-left: none;
+    padding: 1.53rem;
+    background: #fff;
+}
+
+.cui-pricing-table-item:first-child {
+    border-left: 1px solid #e4e9f0;
+    -webkit-border-radius: 6px 0 0 6px;
+            border-radius: 6px 0 0 6px;
+}
+
+.cui-pricing-table-item:last-child {
+    -webkit-border-radius: 0 6px 6px 0;
+            border-radius: 0 6px 6px 0;
+}
+
+.cui-pricing-table-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cui-pricing-table-item-featured {
+    margin: -3.08rem 0 -3.08rem -0.08rem;
+    padding: 4.61rem 1.53rem;
+    -webkit-border-radius: 6px;
+            border-radius: 6px;
+    border-left: 1px solid #e4e9f0;
+}
+
+.cui-pricing-table-item-default {
+    background: #acb7bf;
+    border-color: #acb7bf;
+    color: #fff;
+}
+
+.cui-pricing-table-item-primary {
+    background: #0190fe;
+    border-color: #0190fe;
+    color: #fff;
+}
+
+.cui-pricing-table-item-secondary {
+    background: #6a7a84;
+    border-color: #6a7a84;
+    color: #fff;
+}
+
+.cui-pricing-table-item-success {
+    background: #46be8a;
+    border-color: #46be8a;
+    color: #fff;
+}
+
+.cui-pricing-table-item-warning {
+    background: #f39834;
+    border-color: #f39834;
+    color: #fff;
+}
+
+.cui-pricing-table-item-danger {
+    background: #fb434a;
+    border-color: #fb434a;
+    color: #fff;
+}
+
+.cui-pricing-table-item-info {
+    background: #0887c9;
+    border-color: #0887c9;
+    color: #fff;
+}
+
+.cui-pricing-table-header {
+    padding: 2.3rem 0;
+}
+
+.cui-pricing-table-header-title {
+    text-transform: uppercase;
+    letter-spacing: 0.23rem;
+    font-size: 1.84rem;
+    font-weight: 600;
+    margin-top: 0.76rem;
+}
+
+.cui-pricing-table-pricing-price {
+    font-size: 3.69rem;
+}
+
+.cui-pricing-table-pricing-currency {
+    display: inline-block;
+    margin-top: 0.76rem;
+    margin-right: -0.77rem;
+    font-size: 1.53rem;
+    vertical-align: top;
+}
+
+.cui-pricing-table-pricing-amount {
+    font-weight: 600;
+    font-size: 4.3rem;
+}
+
+.cui-pricing-table-pricing-period {
+    font-size: 1.23rem;
+}
+
+.cui-pricing-table-features li {
+    margin-bottom: 0.76rem;
+}
+
+.cui-pricing-table-footer {
+    padding: 2.3rem 0 3.07rem;
+}
+
+@media (max-width: 1199px) {
+    .cui-pricing-table {
+        display: block;
+        padding: 0;
+    }
+    .cui-pricing-table .cui-pricing-table-item {
+        margin-bottom: 1.53rem !important;
+        border: 1px solid #e4e9f0;
+        -webkit-border-radius: 6px !important;
+                border-radius: 6px !important;
+    }
+    .cui-pricing-table .cui-pricing-table-item-featured {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,284 @@
+/*  STYLES FOR "APPS" MODULE */
+.cui-apps-chat-block-item {
+    padding: 0.76rem 0;
+}
+
+.cui-apps-chat-block-item-right .cui-apps-chat-block-content {
+    margin-left: 0;
+    margin-right: 70px;
+}
+
+.cui-apps-chat-block-item-right .cui-apps-chat-block-content:after {
+    left: auto;
+    right: -1rem;
+    border: 0.53rem solid transparent;
+    border-left-color: #f2f4f8;
+}
+
+.cui-apps-chat-block-item-right .cui-apps-chat-block-avatar {
+    float: right;
+}
+
+.cui-apps-chat-block-avatar {
+    float: left;
+}
+
+.cui-apps-chat-block-content {
+    padding: 0.76rem 1.15rem;
+    background: #f2f4f8;
+    margin-left: 5.38rem;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    position: relative;
+}
+
+.cui-apps-chat-block-content p:last-child {
+    margin-bottom: 0;
+}
+
+.cui-apps-chat-block-content:after {
+    position: absolute;
+    top: 1.69rem;
+    left: -1rem;
+    width: 0;
+    height: 0;
+    display: block;
+    content: '';
+    border: 0.53rem solid transparent;
+    border-right-color: #f2f4f8;
+}
+
+.cui-apps-calendar {
+    margin: -1.25rem -1.25rem -webkit-calc(-1.25rem - 1px) -webkit-calc(-1.25rem - 1px);
+    margin: -1.25rem -1.25rem calc(-1.25rem - 1px) calc(-1.25rem - 1px);
+}
+
+.cui-apps-calendar .fc-toolbar {
+    padding: 1.53rem 1.53rem 0;
+}
+
+.cui-apps-profile-card {
+    border: none;
+    background: #b8beca;
+    -webkit-background-size: cover;
+            background-size: cover;
+    padding: 2.69rem 2.69rem 1.92rem 2.69rem;
+}
+
+@media (max-width: 1199px) {
+    .cui-apps-profile-card {
+        margin-top: 0;
+    }
+}
+
+.cui-apps-profile-wall-item {
+    margin-top: 1.53rem;
+    margin-bottom: 1.53rem;
+    padding-bottom: 1.53rem;
+    border-bottom: 1px solid #e4e9f0;
+}
+
+.cui-apps-profile-wall-avatar {
+    float: left;
+}
+
+.cui-apps-profile-wall-content {
+    margin-left: 5.38rem;
+}
+
+.cui-apps-profile-wall-comments {
+    border-top: 1px solid #e4e9f0;
+    margin-top: 1.53rem;
+}
+
+.cui-apps-profile-wall-message-img {
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    margin: 0 0.38rem 0.76rem 0;
+    max-width: 15.38rem;
+}
+
+.cui-apps-profile-wall-media-object {
+    margin: 0 0 1.53rem 0;
+    max-width: 38.46rem;
+}
+
+.cui-apps-messaging {
+    overflow-x: hidden;
+}
+
+.cui-apps-messaging-header {
+    border-bottom: 1px solid #e4e9f0;
+    padding: 0 1.15rem 0.76rem;
+    margin: -0.31rem -1.16rem 0;
+    position: relative;
+}
+
+.cui-apps-messaging-header i {
+    position: absolute;
+    top: 0.61rem;
+    right: 2.07rem;
+    color: #74708d;
+}
+
+.cui-apps-messaging-header button {
+    position: absolute;
+    top: 0.23rem;
+    right: 1.69rem;
+    border: none;
+    background: none;
+    width: 1.92rem;
+    height: 1.92rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.cui-apps-messaging-header-input {
+    font-size: 1.07rem;
+    height: 2.3rem;
+    padding-right: 2.3rem;
+}
+
+.cui-apps-messaging-list {
+    margin: 0 -1.16rem;
+}
+
+.cui-apps-messaging-list-no-avatar .cui-apps-messaging-tab-content {
+    margin-left: 0 !important;
+}
+
+.cui-apps-messaging-tab {
+    padding: 1.15rem 1.15rem 1.53rem;
+    border-bottom: 1px solid #e4e9f0;
+}
+
+.cui-apps-messaging-tab:hover {
+    background: #f2f4f8;
+}
+
+.cui-apps-messaging-tab-selected {
+    background: #acb7bf !important;
+    color: #fff;
+}
+
+.cui-apps-messaging-tab-selected .cui-apps-messaging-tab-time,
+.cui-apps-messaging-tab-selected .cui-apps-messaging-tab-name,
+.cui-apps-messaging-tab-selected .cui-apps-messaging-tab-text {
+    color: #fff;
+}
+
+.cui-apps-messaging-tab-avatar {
+    float: left;
+}
+
+.cui-apps-messaging-tab-avatar .cui-avatar {
+    border: 2px solid #fff;
+}
+
+.cui-apps-messaging-tab-content {
+    margin-left: 5.38rem;
+    padding-top: 0.38rem;
+}
+
+.cui-apps-messaging-tab-time {
+    color: #b8beca;
+    float: right;
+    position: relative;
+    top: 0.23rem;
+}
+
+.cui-apps-messaging-tab-name {
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    margin-right: 2.3rem;
+}
+
+.cui-apps-messaging-tab-text {
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    color: #b8beca;
+}
+
+.cui-apps-messaging-nav-tabs {
+    display: inline-block;
+    height: 2.3rem;
+}
+
+.cui-apps-messaging-nav-tabs .nav {
+    border-bottom: none !important;
+}
+
+.cui-apps-messaging-nav-tabs .nav-link {
+    padding-bottom: 0.92rem;
+}
+
+.cui-apps-gallery-item {
+    float: left;
+    width: 15.38rem;
+    height: 12.3rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-position: center;
+    -webkit-background-size: cover;
+            background-size: cover;
+    -webkit-transition: all 0.05s ease-in-out;
+    -o-transition: all 0.05s ease-in-out;
+    transition: all 0.05s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .cui-apps-gallery-item {
+        width: 100%;
+        height: 20.76rem;
+    }
+}
+
+.cui-apps-gallery-item:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    z-index: 2;
+}
+
+.cui-apps-gallery-item:hover .cui-apps-gallery-item-controls {
+    display: block;
+}
+
+.cui-apps-gallery-item-controls {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4.38rem 1.53rem 0;
+    text-align: center;
+    background: rgba(14, 11, 32, 0.8);
+}
+
+@media (max-width: 991px) {
+    .cui-apps-gallery-item-controls {
+        text-align: left;
+        padding-top: 1.53rem;
+    }
+}
+
+.cui-apps-gallery-item-with-controls:before {
+    position: absolute;
+    top: -1.16rem;
+    right: -1.16rem;
+    width: 0;
+    height: 0;
+    content: '';
+    z-index: 3;
+    border: 1.15rem solid transparent;
+    border-bottom-color: #0190fe;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}

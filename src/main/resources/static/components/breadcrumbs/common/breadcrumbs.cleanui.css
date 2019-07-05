@@ -1,0 +1,16 @@
+/* BREADCRUMBS */
+.cui-breadcrumbs {
+    padding: 0.76rem 1.53rem;
+    color: #0e0b20;
+}
+
+.cui-breadcrumbs-bg {
+    background: #fff;
+    border-bottom: 1px solid #e4e9f0;
+}
+
+@media (max-width: 767px) {
+    .cui-breadcrumbs {
+        padding: 1.15rem;
+    }
+}

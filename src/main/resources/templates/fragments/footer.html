@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+</head>
+<body>
+<div th:fragment="footer_admin">
+
+    <div class="cui-layout-footer">
+        <div class="cui-footer">
+            <div class="cui-footer-inner">
+                <div class="cui-footer-top">
+                    <div class="row">
+                        <div class="col-lg-9 mb-3">
+                            <div class="mb-3">
+                                <strong>License!</strong>
+                            </div>
+                            <div class="cui-footer-description">
+                                <p>
+                                    License content
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cui-footer-bottom">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a
+                                    href="https://themeforest.net/item/clean-ui-html-bootstrap-admin-template/22827565?ref=mediatec_software"
+                                    target="_blank"
+                                    class="btn btn-danger btn-sm"
+                            >
+                                QingDao University
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="cui-footer-company">
+                                <img
+                                        class="cui-footer-company-logo"
+                                        src="../../components/dummy-assets/common/img/mediatec.png"
+                                        title="Chens LLC"
+                                />
+                                <span>
+              © 2019 <a href="http://mediatec.org/" target="_blank">Chens</a>
+              <br />
+              All rights reserved
+            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a
+                        href="javascript: void(0);"
+                        class="cui-utils-scroll-top"
+                        onclick="$('body, html').animate({'scrollTop': 0}, 500)"
+                ><i class="icmn-arrow-up"></i
+                ></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

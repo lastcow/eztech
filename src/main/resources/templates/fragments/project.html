@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu left</title>
+</head>
+<body>
+<div th:fragment="tablecard">
+
+    <div class="card" data-order-id="card-1">
+        <div class="card-header">
+            <div class="cui-utils-title"><strong>Project List</strong></div>
+            <div class="cui-utils-title-description">All projects charged by me!</div>
+        </div>
+        <div class="card-body">
+            <table id="tbl_projects" class="table mb-0">
+                <thead>
+                <tr>
+                    <th class="border-top-0">#</th>
+                    <th class="border-top-0">First Name</th>
+                    <th class="border-top-0">Username</th>
+                    <th class="border-top-0 hidden-lg-down">Levels</th>
+                    <th class="border-top-0"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox" />
+                    </th>
+                    <td>
+                        <a
+                                href="javascript: void(0);"
+                                class="cui-utils-link-underlined cui-utils-link-blue"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title=""
+                                data-original-title="User #1"
+                        >Mark Stevenson</a
+                        >
+                    </td>
+                    <td>@mdo</td>
+                    <td class="hidden-lg-down">
+                        <div class="cui-utils-steps-inline d-block">
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-success"
+                            >1</a
+                            >
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-success"
+                            >2</a
+                            >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown pull-right">
+                            <button
+                                    type="button"
+                                    class="btn btn-sm dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                Actions
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" href="javascript: void(0)">Action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Another action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: void(0)">Separated link</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox" />
+                    </th>
+                    <td>
+                        <a
+                                href="javascript: void(0);"
+                                class="cui-utils-link-underlined cui-utils-link-blue"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title=""
+                                data-original-title="User #2"
+                        >Jacob Hoffman</a
+                        >
+                    </td>
+                    <td>@fat</td>
+                    <td class="hidden-lg-down">
+                        <div class="cui-utils-steps-inline d-block">
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-success"
+                            >1</a
+                            >
+                            <a href="javascript: void(0);" class="cui-utils-step">2</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown pull-right">
+                            <button
+                                    type="button"
+                                    class="btn btn-sm dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                Actions
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" href="javascript: void(0)">Action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Another action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: void(0)">Separated link</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox" />
+                    </th>
+                    <td>
+                        <a
+                                href="javascript: void(0);"
+                                class="cui-utils-link-underlined cui-utils-link-blue"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title=""
+                                data-original-title="User #3"
+                        >Larry Page</a
+                        >
+                    </td>
+                    <td>@twitter</td>
+                    <td class="hidden-lg-down">
+                        <div class="cui-utils-steps-inline d-block">
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-primary"
+                            >1</a
+                            >
+                            <a href="javascript: void(0);" class="cui-utils-step">2</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown pull-right">
+                            <button
+                                    type="button"
+                                    class="btn btn-sm dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                Actions
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" href="javascript: void(0)">Action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Another action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: void(0)">Separated link</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox" />
+                    </th>
+                    <td>
+                        <a
+                                href="javascript: void(0);"
+                                class="cui-utils-link-underlined cui-utils-link-blue"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title=""
+                                data-original-title="User #1"
+                        >Mark Stevenson</a
+                        >
+                    </td>
+                    <td>@mdo</td>
+                    <td class="hidden-lg-down">
+                        <div class="cui-utils-steps-inline d-block">
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-success"
+                            >1</a
+                            >
+                            <a href="javascript: void(0);" class="cui-utils-step cui-utils-step-success"
+                            >2</a
+                            >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown pull-right">
+                            <button
+                                    type="button"
+                                    class="btn btn-sm dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                Actions
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" href="javascript: void(0)">Action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Another action</a>
+                                <a class="dropdown-item" href="javascript: void(0)">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: void(0)">Separated link</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+</body></html>

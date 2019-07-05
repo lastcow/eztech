@@ -1,0 +1,66 @@
+/*  "CORE" STYLES */
+html {
+    font-size: 13px;
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    color: #514d6a;
+    background: #f2f4f8;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #74708d;
+    -webkit-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover, a:active, a:focus {
+    color: #08f;
+    text-decoration: none;
+}
+
+input {
+    outline: none !important;
+    font-family: "Nunito Sans", sans-serif;
+    color: #514d6a;
+}
+
+button,
+input {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+    -webkit-appearance: none !important;
+       -moz-appearance: none !important;
+            appearance: none !important;
+}
+
+code {
+    color: #74708d;
+    background: #f2f4f8;
+}
+
+pre {
+    color: #74708d;
+    padding: 1.53rem;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    border: 1px solid #e4e9f0;
+    background: #f2f4f8;
+}

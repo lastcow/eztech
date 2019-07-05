@@ -5,46 +5,35 @@
       layout:decorate="~{layouts/admin}">
 <head>
     <meta charset="utf-8"/>
+    <script th:src="@{/page/project/js/project.js}"></script>
 </head>
 <body>
 <th:block layout:fragment="script">
     <script th:src="@{/page/project/js/project.js}"></script>
 </th:block>
 
+<th:block layout:fragment="page_top_nav">
+    <nav class="cui-breadcrumbs cui-breadcrumbs-bg">
+        <div class="pull-right">
+            <a href="javascript: void(0);" class="btn btn-sm btn-primary">
+                Create Project
+            </a>
+        </div>
+        <span class="font-size-18 d-block">
+                    <span class="text-muted">Home ·</span>
+                    <strong>Welcome to Project Portal</strong>
+                    <small class="text-muted">projects, new and reports</small>
+                  </span>
+    </nav>
+</th:block>
 <th:block layout:fragment="content">
-    <div class="content-box">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="element-wrapper">
-                    <!--<h6 class="element-header">My Projects</h6>-->
-                    <div class="element-box">
-                        <div class="element-info">
-                            <div class="row align-items-center">
-                                <div class="col-sm-8">
-                                    <div class="element-info-with-icon">
-                                        <div class="element-info-icon">
-                                            <div class="os-icon os-icon-wallet-loaded"></div>
-                                        </div>
-                                        <div class="element-info-text">
-                                            <h5 class="element-inner-header">
-                                                Projects in charged
-                                            </h5>
-                                            <div class="element-inner-desc">
-                                                All projects that I am in charged.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="dgProjects"></div>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="cui-utils-sortable" id="left-col">
+                <div th:replace="fragments/project :: tablecard"></div>
             </div>
         </div>
     </div>
 </th:block>
-
-<div id="formAddStudent"></div>
 </body>
 </html>
