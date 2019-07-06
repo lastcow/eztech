@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu left</title>
+</head>
+<body>
+<div th:fragment="form_project_new">
+
+    <div class="modal fade" id="formProjectNew" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="_fm_project_name">Project name</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Project name" id="_fm_project_name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <i class="icmn-pen"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="_fm_project_deadline">Deadline</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Select deadline" id="_fm_project_deadline"
+                                           data-toggle="datetimepicker"
+                                           data-target="#_fm_project_deadline"/>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <i class="icmn-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="_fm_project_desc">Project description</label>
+                                    <textarea class="form-control" rows="3" id="_fm_project_desc"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ;(function($){
+            'use strict'
+            $(function(){
+                $('#_fm_project_deadline').datetimepicker({
+                    icons: {
+                        time: 'fa fa-clock-o',
+                        date: 'fa fa-calendar',
+                        up: 'fa fa-arrow-up',
+                        down: 'fa fa-arrow-down',
+                        previous: 'fa fa-arrow-left',
+                        next: 'fa fa-arrow-right'
+                    },
+                    format: 'LL'
+                })
+            })
+        })(jQuery)
+    </script>
+
+</div>
+</body></html>

@@ -15,9 +15,9 @@
 <th:block layout:fragment="page_top_nav">
     <nav class="cui-breadcrumbs cui-breadcrumbs-bg">
         <div class="pull-right">
-            <a href="javascript: void(0);" class="btn btn-sm btn-primary">
+            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#formProjectNew">
                 Create Project
-            </a>
+            </button>
         </div>
         <span class="font-size-18 d-block">
                     <span class="text-muted">Home ·</span>
@@ -26,12 +26,30 @@
                   </span>
     </nav>
 </th:block>
+
+
 <th:block layout:fragment="content">
     <div class="row">
         <div class="col-lg-12">
             <div class="cui-utils-sortable" id="left-col">
-                <div th:replace="fragments/project :: tablecard"></div>
+                <div class="card" data-order-id="card-1">
+                    <div class="card-header">
+                        <div class="cui-utils-title"><strong>Project List</strong></div>
+                        <div class="cui-utils-title-description">All projects charged by me!</div>
+                    </div>
+                    <div class="card-body">
+                        <div id="dgProjects"></div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</th:block>
+
+<th:block layout:fragment="modals">
+    <div th:replace="/fragments/modal :: form_project_new"></div>
+    <div id="popup_add_users">
+        <div id="fm_add_user">
         </div>
     </div>
 </th:block>

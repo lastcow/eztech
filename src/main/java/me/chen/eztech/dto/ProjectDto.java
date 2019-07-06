@@ -4,6 +4,7 @@ package me.chen.eztech.dto;
 import lombok.Data;
 
 import java.sql.Date;
+import java.util.List;
 
 @Data
 public class ProjectDto {
@@ -14,6 +15,8 @@ public class ProjectDto {
     private Date deadLine;
     private String projectDesc;
     private String students;
+
+    private List<UserDto> users;
 
     private int todos;
 }

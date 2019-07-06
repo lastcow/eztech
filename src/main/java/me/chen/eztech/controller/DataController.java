@@ -2,6 +2,7 @@ package me.chen.eztech.controller;
 
 
 import me.chen.eztech.dto.ProjectDto;
+import me.chen.eztech.dto.UserDto;
 import me.chen.eztech.model.Project;
 import me.chen.eztech.model.Task;
 import me.chen.eztech.model.User;
@@ -51,6 +52,23 @@ public class DataController {
             // Get tasks
             List<Task> todos = taskService.getTaskByProjectAndStatus(project.getId(), false);
             projectDto.setTodos(todos.size());
+
+            // Get users
+            List<User> users = project.getStudents();
+            List<UserDto> userDtos = new ArrayList<>();
+            users.forEach(user -> {
+                UserDto userDto = new UserDto();
+                userDto.setName(user.getFirstName() + " " + user.getLastName());
+                userDto.setEmail(user.getEmail());
+                userDtos.add(userDto);
+            });
+
+            // Add 2 dummy data
+            userDtos.add(new UserDto("1","Zhijiang", "a@chen.me"));
+            userDtos.add(new UserDto("2", "Fei", "b@chen.me"));
+
+            projectDto.setUsers(userDtos);
+
             projectDtos.add(projectDto);
         });
 
@@ -78,5 +96,17 @@ public class DataController {
         Project project = projectService.updateProjectWithDto(projectId, projectDto);
 
         return project == null ? "" : projectId;
+    }
+
+
+    @GetMapping(value = "/data/users/all", produces = "application/json")
+    public List<UserDto> getUsers(){
+
+        List<UserDto> userDtos = new ArrayList<>();
+        // Add 2 dummy data
+        userDtos.add(new UserDto("1","Zhijiang", "a@chen.me"));
+        userDtos.add(new UserDto("2", "Fei", "b@chen.me"));
+
+        return userDtos;
     }
 }
