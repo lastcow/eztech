@@ -18,6 +18,8 @@ public class Task {
     private String name;
     private boolean completed;
 
+    private boolean milestone;
+
 
     @ManyToOne
     @JoinColumn(name = "project_id")

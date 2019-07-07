@@ -148,6 +148,7 @@ $(function(){
                 var isEditing = e.row.isEditing,
                     $links = e.cellElement.find(".dx-link");
                 $links.text("");
+                var projectId = e.row.data.id;
 
                 if(isEditing){
 
@@ -155,19 +156,11 @@ $(function(){
                     $links.filter(".dx-link-edit").removeClass("dx-icon-edit").addClass("icmn-pencil2")
                     $("<a>").addClass("dx-link text-primary icmn-user-plus").on('dxclick', function(){
                         var data = jQuery.extend(true, {}, e.row.data);
-                        delete data.__metadata;
-                        delete data.id;
-                        delete data.projectName;
-                        delete data.deadLine;
-                        delete data.projectDesc;
-                        delete data.todos;
-                        delete data.status;
-                        delete data.students;
                         $('#fm_add_user').dxDropDownBox({
 
-                            value: ["1", "2"],
+                            value: _.pluck(data.users, "id"),
                             valueExpr: "id",
-                            placeholder: "Select a value...",
+                            placeholder: "Select users ...",
                             displayExpr: "email",
                             showClearButton: true,
                             dataSource: getDataSourceUsers(),
@@ -214,6 +207,94 @@ $(function(){
                                         text: "Save",
                                         onClick: function(e){
 
+                                            // Write data to database.
+                                            $.ajax({
+                                                type: "POST",
+                                                contentType: "application/json",
+                                                url: "/admin/project/user/add",
+                                                data: JSON.stringify($('#fm_add_user').dxDropDownBox('instance').option('value')),
+                                                dataType: "json",
+                                                cache: false,
+                                                timeout: 600000,
+                                                success: function(data){
+
+                                                }
+                                            });
+                                            $('#popup_add_users').dxPopup('hide');
+                                        }
+                                    }
+                                },{
+                                    toolbar: "bottom",
+                                    widget: "dxButton",
+                                    location: "after",
+                                    options: {
+                                        text: "Cancel",
+                                        onClick: function(e){
+                                            // Close popup window
+                                            $('#popup_add_users').dxPopup('hide');
+                                        }
+                                    }
+                                }
+                            ]
+                        });
+                    }).appendTo(e.cellElement);
+
+                    $("<a>").addClass("dx-link text-warning icmn-target").on('dxclick', function() {
+                        $('#text_add_milestone').dxTextBox({
+                            placeholder: "Enter milestone...",
+                            showClearButton: true
+                        }).dxValidator({
+                            type: "required",
+                            message: "Description is required"
+                        });
+
+                        $('#date_add_milestone').dxDateBox({
+                            type: "date"
+                        });
+
+                        $('#popup_add_milestone').dxPopup({
+                           title: 'Add milestone',
+                            visible: true,
+                            height: "300",
+                            width: "600",
+                            toolbarItems: [
+                                {
+                                    toolbar: "bottom",
+                                    widget: "dxButton",
+                                    location: "after",
+                                    options: {
+                                        text: "Save",
+                                        onClick: function(e){
+                                            // Get Data
+                                            var milestone = {};
+                                            milestone["projectId"] = projectId;
+                                            milestone["desc"] = $('#text_add_milestone').dxTextBox("instance").option("value");
+                                            milestone["deadline"] = $('#date_add_milestone').dxDateBox("instance").option("value");
+                                            // Write data to database.
+                                            $.ajax({
+                                                type: "POST",
+                                                contentType: "application/json",
+                                                url: "/admin/project/milestone/add",
+                                                data: JSON.stringify(milestone),
+                                                dataType: "json",
+                                                cache: false,
+                                                timeout: 600000,
+                                                success: function(data){
+
+                                                }
+                                            });
+                                            $('#popup_add_milestone').dxPopup('hide');
+                                        }
+                                    }
+                                },{
+                                    toolbar: "bottom",
+                                    widget: "dxButton",
+                                    location: "after",
+                                    options: {
+                                        text: "Cancel",
+                                        onClick: function(e){
+                                            // Close popup window
+                                            $('#popup_add_milestone').dxPopup('hide');
                                         }
                                     }
                                 }
