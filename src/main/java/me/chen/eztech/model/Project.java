@@ -33,7 +33,7 @@ public class Project {
     private User professor;
 
     @OneToMany(mappedBy = "project")
-    private List<User> students;
+    private List<ProjectMembers> members;
 
     /**
      * Project has tasks and milestone

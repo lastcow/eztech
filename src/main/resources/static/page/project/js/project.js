@@ -5,7 +5,7 @@ $(function(){
     /**
      * Enable menu
      */
-    $('#mmProject').addClass("selected");
+    $('#menu_project_left').addClass("cui-menu-left-item-active");
 
     // if($('#tbl_projects')){
     //     $('#tbl_projects').DataTable();
@@ -117,7 +117,7 @@ $(function(){
                 validationRules: [{ type: "required" }]
             },{
                 dataField: "students",
-                caption: "Students"
+                caption: "Members"
             },{
                 dataField: "todos",
                 caption: "To-Dos"
@@ -160,7 +160,7 @@ $(function(){
 
                             value: _.pluck(data.users, "id"),
                             valueExpr: "id",
-                            placeholder: "Select users ...",
+                            placeholder: "Select members ...",
                             displayExpr: "email",
                             showClearButton: true,
                             dataSource: getDataSourceUsers(),
@@ -211,13 +211,13 @@ $(function(){
                                             $.ajax({
                                                 type: "POST",
                                                 contentType: "application/json",
-                                                url: "/admin/project/user/add",
+                                                url: "/admin/project/" + projectId + "/user/add",
                                                 data: JSON.stringify($('#fm_add_user').dxDropDownBox('instance').option('value')),
                                                 dataType: "json",
                                                 cache: false,
                                                 timeout: 600000,
                                                 success: function(data){
-
+                                                    $("#dgProjects").dxDataGrid("instance").refresh();
                                                 }
                                             });
                                             $('#popup_add_users').dxPopup('hide');
@@ -280,7 +280,7 @@ $(function(){
                                                 cache: false,
                                                 timeout: 600000,
                                                 success: function(data){
-
+                                                    $("#dgProjects").dxDataGrid("instance").refresh();
                                                 }
                                             });
                                             $('#popup_add_milestone').dxPopup('hide');

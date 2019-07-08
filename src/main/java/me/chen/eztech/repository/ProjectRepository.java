@@ -11,4 +11,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, String> {
 
+    public List<Project> getProjectsByProfessorUsername(String userName);
+
 }

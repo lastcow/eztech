@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -17,6 +18,8 @@ public class Task {
 
     private String name;
     private boolean completed;
+    private Date deadline;
+    private String description;
 
     private boolean milestone;
 

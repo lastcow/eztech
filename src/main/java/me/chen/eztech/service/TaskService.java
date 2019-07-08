@@ -16,4 +16,13 @@ public class TaskService {
     public List<Task> getTaskByProjectAndStatus(String projectId, boolean completed){
         return taskRepository.getTasksByCompletedAndProjectId(completed, projectId);
     }
+
+    /**
+     * Crete task
+     * @param task
+     * @return
+     */
+    public Task create(Task task){
+        return taskRepository.save(task);
+    }
 }

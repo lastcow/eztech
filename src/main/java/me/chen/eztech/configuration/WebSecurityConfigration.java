@@ -42,13 +42,15 @@ public class WebSecurityConfigration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
-                    .antMatchers("/admin/**").permitAll()
+                    .antMatchers("/admin/**").hasAnyRole("ADMIN", "INSTRUCTOR", "STUDENT")
                     .and()
                 .formLogin()
                     .loginPage("/login").defaultSuccessUrl("/admin/dashboard")
                     .permitAll()
                     .and()
                 .logout()
-                    .permitAll();
+                    .permitAll()
+                    .and()
+                .rememberMe().key("eztech-rememberme-session-key").tokenValiditySeconds(86400);
     }
 }

@@ -21,23 +21,21 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private boolean active;
 
     @Column(unique = true)
     private String email;
     private String contactNumber;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "role_id")
     private Role role;
 
     /**
      * Professor 1 : M Topics
      */
-    @OneToMany(mappedBy = "professor")
-    private List<Project> projects;
+    @OneToMany(mappedBy = "member")
+    private List<ProjectMembers> projects;
 
-    @ManyToOne
-    @JoinColumn(name = "project_id")
-    private Project project;
 
 }

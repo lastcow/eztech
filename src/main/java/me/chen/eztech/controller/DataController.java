@@ -4,10 +4,12 @@ package me.chen.eztech.controller;
 import me.chen.eztech.dto.ProjectDto;
 import me.chen.eztech.dto.UserDto;
 import me.chen.eztech.model.Project;
+import me.chen.eztech.model.ProjectMembers;
 import me.chen.eztech.model.Task;
 import me.chen.eztech.model.User;
 import me.chen.eztech.service.ProjectService;
 import me.chen.eztech.service.TaskService;
+import me.chen.eztech.service.UserService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,13 +30,17 @@ public class DataController {
     ProjectService projectService;
     @Autowired
     TaskService taskService;
+    @Autowired
+    UserService userService;
 
     @PostMapping(value = "/data/projects", produces = "application/json")
     @ResponseBody
     public List<ProjectDto> getMyProjects(@AuthenticationPrincipal Principal principal){
+        String username = principal.getName();
+
         List<ProjectDto> projectDtos = new ArrayList<>();
 
-        List<Project> projects = projectService.getProjects();
+        List<Project> projects = projectService.getMyProject(username);
         projects.forEach(project -> {
             ProjectDto projectDto = new ProjectDto();
             projectDto.setId(project.getId());
@@ -44,9 +50,11 @@ public class DataController {
             projectDto.setProjectDesc(project.getDescription());
 
             // Get students
-            List<User> students = project.getStudents();
+            List<ProjectMembers> students = project.getMembers();
             students.forEach(student->{
-                projectDto.setStudents(projectDto.getStudents() + " / " + student.getFirstName() + " " + student.getLastName());
+                if(student.isActive()) {
+                    projectDto.setStudents(projectDto.getStudents() + " / " + student.getMember().getFirstName() + " " + student.getMember().getLastName());
+                }
             });
 
             // Get tasks
@@ -54,18 +62,17 @@ public class DataController {
             projectDto.setTodos(todos.size());
 
             // Get users
-            List<User> users = project.getStudents();
+            List<ProjectMembers> users = project.getMembers();
             List<UserDto> userDtos = new ArrayList<>();
             users.forEach(user -> {
-                UserDto userDto = new UserDto();
-                userDto.setName(user.getFirstName() + " " + user.getLastName());
-                userDto.setEmail(user.getEmail());
-                userDtos.add(userDto);
+                if(user.isActive()) {
+                    UserDto userDto = new UserDto();
+                    userDto.setId(user.getMember().getId());
+                    userDto.setName(user.getMember().getFirstName() + " " + user.getMember().getLastName());
+                    userDto.setEmail(user.getMember().getEmail());
+                    userDtos.add(userDto);
+                }
             });
-
-            // Add 2 dummy data
-            userDtos.add(new UserDto("1","Zhijiang", "a@chen.me"));
-            userDtos.add(new UserDto("2", "Fei", "b@chen.me"));
 
             projectDto.setUsers(userDtos);
 
@@ -83,9 +90,10 @@ public class DataController {
      */
     @PostMapping(value = "/data/project/new")
     @ResponseStatus(HttpStatus.OK)
-    public String newProject(ProjectDto projectDto){
+    public String newProject(ProjectDto projectDto, Principal principal){
 
-        Project project = projectService.newProjectWithDto(projectDto);
+        String owner = principal.getName();
+        Project project = projectService.newProjectWithDto(projectDto, owner);
         return project.getId();
     }
 
@@ -103,9 +111,12 @@ public class DataController {
     public List<UserDto> getUsers(){
 
         List<UserDto> userDtos = new ArrayList<>();
-        // Add 2 dummy data
-        userDtos.add(new UserDto("1","Zhijiang", "a@chen.me"));
-        userDtos.add(new UserDto("2", "Fei", "b@chen.me"));
+
+        // Get users from data
+        List<User> users = userService.getAllUsers();
+        users.forEach(user -> {
+            userDtos.add(new UserDto(user.getId(), user.getFirstName()+ " " + user.getLastName(), user.getEmail()));
+        });
 
         return userDtos;
     }

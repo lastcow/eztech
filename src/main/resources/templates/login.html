@@ -1,51 +1,334 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" th:lang="${#locale.language}">
-
 <head>
-    <title th:text="#{msgs.header.title.login}">User login</title>
-    <meta charset="utf-8">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta content="template language" name="keywords">
-    <meta content="Tamerlan Soziev" name="author">
-    <meta content="Admin dashboard html template" name="description">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link th:href="@{/favicon.png}" rel="shortcut icon">
-    <link href="apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
-    <link th:href="@{/bower_components/select2/dist/css/select2.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/dropzone/dist/dropzone.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/fullcalendar/dist/fullcalendar.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css}" rel="stylesheet">
-    <link th:href="@{/bower_components/slick-carousel/slick/slick.css}" rel="stylesheet">
-    <link th:href="@{/css/main.css?version=4.4.0}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+        Clean UI HTML Admin Template
+    </title>
+    <link th:href="@{/components/dummy-assets/common/img/favicon.png}" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+
+    <!-- VENDORS -->
+    <!-- v2.0.2 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap/dist/css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/perfect-scrollbar/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/ladda/dist/ladda-themeless.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap-select/dist/css/bootstrap-select.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/select2/dist/css/select2.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/tempus-dominus-bs4/build/css/tempusdominus-bootstrap-4.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/fullcalendar/dist/fullcalendar.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap-sweetalert/dist/sweetalert.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/summernote/dist/summernote.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/owl.carousel/dist/assets/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/ionrangeslider/css/ion.rangeSlider.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/fc-3.2.5/r-2.2.2/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/c3/c3.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/chartist/dist/chartist.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/nprogress/nprogress.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/jquery-steps/demo/css/jquery.steps.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/dropify/dist/css/dropify.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-linearicons/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-icomoon/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/font-awesome/css/font-awesome.min.css}">
+    <script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+    <script th:src="@{/vendors/popper.js/dist/umd/popper.js}"></script>
+    <script th:src="@{/vendors/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap/dist/js/bootstrap.js}"></script>
+    <script th:src="@{/vendors/jquery-mousewheel/jquery.mousewheel.min.js}"></script>
+    <script th:src="@{/vendors/perfect-scrollbar/js/perfect-scrollbar.jquery.js}"></script>
+    <script th:src="@{/vendors/spin.js/spin.js}"></script>
+    <script th:src="@{/vendors/ladda/dist/ladda.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-select/dist/js/bootstrap-select.min.js}"></script>
+    <script th:src="@{/vendors/select2/dist/js/select2.full.min.js}"></script>
+    <script th:src="@{/vendors/html5-form-validation/dist/jquery.validation.min.js}"></script>
+    <script th:src="@{/vendors/jquery-typeahead/dist/jquery.typeahead.min.js}"></script>
+    <script th:src="@{/vendors/jquery-mask-plugin/dist/jquery.mask.min.js}"></script>
+    <script th:src="@{/vendors/autosize/dist/autosize.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-show-password/bootstrap-show-password.min.js}"></script>
+    <script th:src="@{/vendors/moment/min/moment.min.js}"></script>
+    <script th:src="@{/vendors/tempus-dominus-bs4/build/js/tempusdominus-bootstrap-4.min.js}"></script>
+    <script th:src="@{/vendors/fullcalendar/dist/fullcalendar.min.js}"></script>
+    <script th:src="@{/vendors/bootstrap-sweetalert/dist/sweetalert.min.js}"></script>
+    <script th:src="@{/vendors/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js}"></script>
+    <script th:src="@{/vendors/summernote/dist/summernote.min.js}"></script>
+    <script th:src="@{/vendors/owl.carousel/dist/owl.carousel.min.js}"></script>
+    <script th:src="@{/vendors/ionrangeslider/js/ion.rangeSlider.min.js}"></script>
+    <script th:src="@{/vendors/nestable/jquery.nestable.js}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fc-3.2.5/r-2.2.2/datatables.min.js"></script>
+    <script th:src="@{/vendors/editable-table/mindmup-editabletable.js}"></script>
+    <script th:src="@{/vendors/d3/d3.min.js}"></script>
+    <script th:src="@{/vendors/c3/c3.min.js}"></script>
+    <script th:src="@{/vendors/chartist/dist/chartist.min.js}"></script>
+    <script th:src="@{/vendors/peity/jquery.peity.min.js}"></script>
+    <script th:src="@{/vendors/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js}"></script>
+    <script th:src="@{/vendors/jquery-countTo/jquery.countTo.js}"></script>
+    <script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+    <script th:src="@{/vendors/jquery-steps/build/jquery.steps.min.js}"></script>
+    <script th:src="@{/vendors/chart.js/dist/Chart.bundle.min.js}"></script>
+    <script th:src="@{/vendors/dropify/dist/js/dropify.min.js}"></script>
+    <script th:src="@{/vendors/d3-dsv/dist/d3-dsv.js}"></script>
+    <script th:src="@{/vendors/d3-time-format/dist/d3-time-format.js}"></script>
+    <script th:src="@{/vendors/techan/dist/techan.min.js}"></script>
+
+    <!-- CLEAN UI HTML ADMIN TEMPLATE MODULES-->
+    <!-- v2.0.2 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/components/core/common/core.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/core/widgets/widgets.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/vendors/common/vendors.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/settings/common/settings.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/settings/themes/themes.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-left/common/menu-left.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-top/common/menu-top.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/menu-right/common/menu-right.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/top-bar/common/top-bar.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/breadcrumbs/common/breadcrumbs.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/footer/common/footer.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/pages/common/pages.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/ecommerce/common/ecommerce.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/apps/common/apps.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/blog/common/blog.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/youtube/common/youtube.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/github/common/github.cleanui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/components/docs/common/docs.cleanui.css}">
+    <script th:src="@{/components/menu-left/common/menu-left.cleanui.js}"></script>
+    <script th:src="@{/components/menu-top/common/menu-top.cleanui.js}"></script>
+    <script th:src="@{/components/menu-right/common/menu-right.cleanui.js}"></script>
+    <script th:src="@{/components/blog/common/blog.cleanui.js}"></script>
+    <script th:src="@{/components/github/common/github.cleanui.js}"></script>
+
+
+    <!-- PRELOADER STYLES-->
+    <style>
+        .cui-initial-loading {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDFweCIgIGhlaWdodD0iNDFweCIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0ibGRzLXJvbGxpbmciPiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiBmaWxsPSJub25lIiBuZy1hdHRyLXN0cm9rZT0ie3tjb25maWcuY29sb3J9fSIgbmctYXR0ci1zdHJva2Utd2lkdGg9Int7Y29uZmlnLndpZHRofX0iIG5nLWF0dHItcj0ie3tjb25maWcucmFkaXVzfX0iIG5nLWF0dHItc3Ryb2tlLWRhc2hhcnJheT0ie3tjb25maWcuZGFzaGFycmF5fX0iIHN0cm9rZT0iIzAxOTBmZSIgc3Ryb2tlLXdpZHRoPSIxMCIgcj0iMzUiIHN0cm9rZS1kYXNoYXJyYXk9IjE2NC45MzM2MTQzMTM0NjQxNSA1Ni45Nzc4NzE0Mzc4MjEzOCIgdHJhbnNmb3JtPSJyb3RhdGUoODQgNTAgNTApIj4gICAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgY2FsY01vZGU9ImxpbmVhciIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCIga2V5VGltZXM9IjA7MSIgZHVyPSIxcyIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPiAgICA8L2NpcmNsZT4gIDwvc3ZnPg==);
+            background-color: #f2f4f8;
+        }
+
+
+
+
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.cui-initial-loading').delay(200).fadeOut(400)
+        })
+    </script>
 </head>
-<body class="auth-wrapper">
-<div class="all-wrapper menu-side with-pattern">
-    <div class="auth-box-w">
-        <div class="logo-w">
-            <a href="index.html"><img alt="" th:src="@{img/logo-big.png}"></a>
+<body class="cui-config-borderless cui-menu-colorful cui-theme-light cui-menu-left-shadow">
+<div class="cui-initial-loading"></div>
+<div class="cui-layout cui-layout-has-sider">
+    <div class="cui-menu-right">
+        <div class="cui-menu-right-inner">
+            <div class="cui-menu-right-header">
+                <span class="fa fa-times pull-right cui-menu-right-action-toggle"><!-- --></span>
+                Theme Settings
+            </div>
         </div>
-        <h4 class="auth-header" th:text="#{msgs.login.form.title}">
-        </h4>
-        <form th:action="@{/login}" method="post">
-            <div class="form-group">
-                <label for="" th:text="#{msgs.login.form.username}"></label><input class="form-control" placeholder="Enter your username" type="text" name="username">
-                <div class="pre-icon os-icon os-icon-user-male-circle"></div>
-            </div>
-            <div class="form-group">
-                <label for="" th:text="#{msgs.login.form.password}"></label><input class="form-control" placeholder="Enter your password" type="password" name="password">
-                <div class="pre-icon os-icon os-icon-fingerprint"></div>
-            </div>
-            <div class="buttons-w">
-                <button class="btn btn-primary">Log me in</button>
-                <div class="form-check-inline">
-                    <label class="form-check-label"><input class="form-check-input" type="checkbox" th:text="#{msgs.login.form.rememberme}"></label>
+    </div>
+    <div class="cui-layout">
+        <div class="cui-layout-content">
+            <div class="cui-utils-content">
+                <!-- START: pages/login-beta -->
+                <div
+                        class="cui-login cui-login-fullscreen"
+                        style="background-image: url(../../components/pages/common/img/login/1.jpeg)"
+                >
+                    <div class="cui-login-header">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="cui-login-header-logo">
+                                    <a href="javascript: history.back();">
+                                        <img
+                                                src="../../components/pages/common/img/logo-inverse.png"
+                                                alt="Clean UI Admin Template"
+                                        />
+                                    </a>
+                                    <br />
+                                    <br />
+                                    <a
+                                            href="javascript: void(0);"
+                                            class="btn btn-sm btn-outline ml-3 random-bg-image mb-3"
+                                            data-img="1"
+                                    >Toggle Background</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="cui-login-header-menu">
+                                    <ul class="list-unstyled list-inline">
+                                        <li class="list-inline-item active"><a href="javascript: void(0);">Login</a></li>
+                                        <li class="list-inline-item"><a href="javascript: void(0);">About</a></li>
+                                        <li class="list-inline-item"><a href="javascript: void(0);">Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-login-block cui-login-block-extended">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="cui-login-block-inner">
+                                    <div class="cui-login-block-form">
+                                        <h4 class="text-uppercase">
+                                            <strong>Please log in</strong>
+                                        </h4>
+                                        <br />
+                                        <form id="form-validation" name="form-validation" method="POST" th:action="@{/login}">
+                                            <div class="form-group">
+                                                <label class="form-label">Username</label>
+                                                <input
+                                                        id="validation-email"
+                                                        class="form-control"
+                                                        placeholder="Email or Username"
+                                                        name="username"
+                                                        type="text"
+                                                        data-validation="[NOTEMPTY]"
+
+                                                />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Password</label>
+                                                <input
+                                                        id="validation-password"
+                                                        class="form-control password"
+                                                        name="password"
+                                                        type="password"
+                                                        placeholder="Your Password"
+                                                />
+                                            </div>
+                                            <div class="form-group">
+                                                <a
+                                                        href="javascript: void(0);"
+                                                        class="pull-right cui-utils-link-blue cui-utils-link-underlined"
+                                                >Forgot Password?</a
+                                                >
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="remember-me" checked />
+                                                        Remember me
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn btn-primary mr-3">Sign In</button>
+                                                <span class="register-link">
+                  <a href="" class="cui-utils-link-blue cui-utils-link-underlined">Register</a> if
+                  you don't have account
+                </span>
+                                            </div>
+                                            <div class="form-group">
+                <span>
+                  Use another service to Log In (disabled)
+                </span>
+                                                <div class="mt-2">
+                                                    <a href="javascript: void(0);" class="btn btn-icon disabled">
+                                                        <i class="icmn-facebook"></i>
+                                                    </a>
+                                                    <a href="javascript: void(0);" class="btn btn-icon disabled">
+                                                        <i class="icmn-google"></i>
+                                                    </a>
+                                                    <a href="javascript: void(0);" class="btn btn-icon disabled">
+                                                        <i class="icmn-windows"></i>
+                                                    </a>
+                                                    <a href="javascript: void(0);" class="btn btn-icon disabled">
+                                                        <i class="icmn-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="cui-login-block-sidebar">
+                                        <h4 class="cui-login-block-sidebar-title">
+                                            <strong>EZTECH</strong>
+                                            <br />
+                                            <span>July 2019</span>
+                                        </h4>
+                                        <div class="cui-login-block-sidebar-item">
+                                            System developed to help instructor and students communication, always online 24 hours, collaboration, easy to use,
+                                            stable, efficient.
+                                        </div>
+                                        <div class="cui-login-block-sidebar-item">
+                                            Beta version online, any question, drop email to xxxx@xxx.com.
+                                        </div>
+                                        <div class="cui-login-block-sidebar-place">
+                                            <i class="icmn-location mr-3"><!-- --></i>
+                                            QingDao, ShanDong
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-login-footer text-center">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item"><a href="javascript: void(0);">Terms of Use</a></li>
+                            <li class="active list-inline-item"><a href="javascript: void(0);">Compliance</a></li>
+                            <li class="list-inline-item"><a href="javascript: void(0);">Confidential Information</a></li>
+                            <li class="list-inline-item"><a href="javascript: void(0);">Support</a></li>
+                            <li class="list-inline-item"><a href="javascript: void(0);">Contacts</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <!-- END: pages/cui-login-beta -->
+
+                <!-- START: page scripts -->
+                <script>
+                    ;(function($) {
+                        'use strict'
+                        $(function() {
+                            // Form Validation
+                            $('#form-validation').validate({
+                                submit: {
+                                    settings: {
+                                        inputContainer: '.form-group',
+                                        errorListClass: 'form-control-error',
+                                        errorClass: 'has-danger',
+                                    },
+                                },
+                            })
+
+                            // Show/Hide Password
+                            $('.password').password({
+                                eyeClass: '',
+                                eyeOpenClass: 'icmn-eye',
+                                eyeCloseClass: 'icmn-eye-blocked',
+                            })
+
+                            // Switch to fullscreen
+                            $('.switch-to-fullscreen').on('click', function() {
+                                $('.cui-login').toggleClass('cui-login-fullscreen')
+                            })
+
+                            // Change BG
+                            $('.random-bg-image').on('click', function() {
+                                var min = 1,
+                                    max = 5,
+                                    next = Math.floor($('.random-bg-image').data('img')) + 1,
+                                    final = next > max ? min : next
+
+                                $('.random-bg-image').data('img', final)
+                                $('.cui-login')
+                                    .data('img', final)
+                                    .css('backgroundImage', 'url(../../components/pages/common/img/login/' + final + '.jpeg)')
+                            })
+                        })
+                    })(jQuery)
+                </script>
+                <!-- END: page scripts -->
+
             </div>
-        </form>
+        </div>
     </div>
 </div>
 </body>

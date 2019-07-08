@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import java.sql.Date;
 
 @Data
-public class Milestone {
+public class MilestoneForm {
 
     private String projectId;
     @NotBlank(message = "description can't empty!")

@@ -10,16 +10,17 @@ import javax.persistence.*;
  */
 @Entity
 @Data
-public class StudentXProject {
+public class ProjectMembers {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name="system-uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
+    private boolean active;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
-    private User student;
+    @JoinColumn(name = "user_id")
+    private User member;
 
     @ManyToOne
     @JoinColumn(name = "project_id")
