@@ -64,10 +64,10 @@ public class ProjectController {
 
             taskService.create(task);
 
-            return ResponseEntity.ok(task);
+            return ResponseEntity.ok(null);
         }
 
-        return (ResponseEntity<?>) ResponseEntity.notFound();
+        return ResponseEntity.ok(null);
 
     }
 }
