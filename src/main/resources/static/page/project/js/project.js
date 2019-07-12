@@ -211,7 +211,7 @@ $(function(){
                                             $.ajax({
                                                 type: "POST",
                                                 contentType: "application/json",
-                                                url: "/admin/project/" + projectId + "/user/add",
+                                                url: "/professor/project/" + projectId + "/user/add",
                                                 data: JSON.stringify($('#fm_add_user').dxDropDownBox('instance').option('value')),
                                                 dataType: "json",
                                                 cache: false,
@@ -274,7 +274,7 @@ $(function(){
                                             $.ajax({
                                                 type: "POST",
                                                 contentType: "application/json",
-                                                url: "/admin/project/milestone/add",
+                                                url: "/professor/project/milestone/add",
                                                 data: JSON.stringify(milestone),
                                                 dataType: "json",
                                                 cache: false,

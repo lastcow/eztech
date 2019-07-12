@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/admin/project")
+@RequestMapping("/professor/project")
 public class ProjectController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class ProjectController {
 
     @GetMapping({"", "/"})
     public String index(){
-        return "project/index";
+        return "professor/project/index";
     }
 
 

@@ -27,7 +27,9 @@ public class User {
     private String email;
     private String contactNumber;
 
-    @ManyToOne()
+
+
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
@@ -36,6 +38,16 @@ public class User {
      */
     @OneToMany(mappedBy = "member")
     private List<ProjectMembers> projects;
+
+    @OneToMany(mappedBy = "tutor")
+    private List<User> students;
+
+    @ManyToOne
+    @JoinColumn(name = "turor_id")
+    private User tutor;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Event> events;
 
 
 }

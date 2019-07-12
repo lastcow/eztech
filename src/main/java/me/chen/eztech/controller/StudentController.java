@@ -2,18 +2,16 @@ package me.chen.eztech.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.transaction.Transactional;
-
 @Controller
-@Transactional
-@RequestMapping(value = "/professor/task")
-public class TaskController {
+@RequestMapping("/student")
+public class StudentController {
 
+    @GetMapping("/dashboard")
+    public String dashboard(){
 
-    @GetMapping(value = {"", "/"})
-    public String task(){
-        return "task";
+        return "student/dashboard";
     }
 }

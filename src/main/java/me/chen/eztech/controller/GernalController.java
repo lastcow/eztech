@@ -11,7 +11,7 @@ public class GernalController {
         return "login";
     }
 
-    @GetMapping(value = "/admin/dashboard")
+    @GetMapping(value = "/professor/dashboard")
     public String dashboard(){
         return "dashboard";
     }

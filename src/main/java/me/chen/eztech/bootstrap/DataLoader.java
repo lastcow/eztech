@@ -34,7 +34,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         userService.create(user);
 
         // Create role instructor
-        role = roleService.create("ROLE_INSTRUCTOR", "Instructor");
+        role = roleService.create("ROLE_PROFESSOR", "Instructor");
         user = new User();
         user.setUsername("instructor 1");
         user.setFirstName("Instructor");

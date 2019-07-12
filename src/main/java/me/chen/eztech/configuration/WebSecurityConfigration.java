@@ -42,7 +42,8 @@ public class WebSecurityConfigration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
-                    .antMatchers("/admin/**").hasAnyRole("ADMIN", "INSTRUCTOR", "STUDENT")
+                    .antMatchers("/professor/**").hasAnyRole("ADMIN", "PROFESSOR")
+                    .antMatchers("/student/**").hasAnyRole("ADMIN", "STUDENT")
                     .and()
                 .formLogin()
                     .loginPage("/login").defaultSuccessUrl("/admin/dashboard")
