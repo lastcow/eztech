@@ -22,6 +22,6 @@ public class Event {
     @JoinColumn(name = "owner_id")
     private User owner;
 
-    private String eventType;
+    private String eventType;   // Subject
 
 }

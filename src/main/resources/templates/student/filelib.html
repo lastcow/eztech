@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin_student}">
+<head>
+    <meta charset="utf-8"/>
+    <script th:src="@{/page/student/js/filelib.js}"></script>
+</head>
+<body>
+
+<th:block layout:fragment="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="cui-utils-sortable" id="left-col">
+                <div th:replace="/fragments/cards :: card_student_filelib"></div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</body>
+</html>

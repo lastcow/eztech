@@ -14,4 +14,10 @@ public class StudentController {
 
         return "student/dashboard";
     }
+
+
+    @GetMapping("/filelib")
+    public String fileLib(){
+        return "student/filelib";
+    }
 }
