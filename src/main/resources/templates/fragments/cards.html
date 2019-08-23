@@ -37,21 +37,35 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <div class="cui-profile-head-card">
-                    <div
-                            class="cui-profile-head-card-head"
-                            style="background-image: url('../../components/dummy-assets/common/img/photos/6.jpeg');"
-                    >
-                        <h2 class="text-white">
-                            <strong>
-                                Clean. Simple <br />
-                                Responsive
-                            </strong>
-                        </h2>
-                    </div>
                     <div class="cui-profile-head-card-content">
-                        <div class="cui-profile-head-card-left">
+                        <div class="cui-profile-head-card-left mt-0" style="text-align: center;">
+                            <a
+                                    class="d-block mx-auto mb-2 cui-avatar cui-avatar-90 cui-avatar-bordered cui-avatar-border-white"
+                                    href="javascript: void(0);"
+                            >
+                                <img
+                                        src="../../components/dummy-assets/common/img/avatars/5.jpg"
+                                        alt="Alternative text to the image"
+                                />
+                            </a>
+                            <strong th:text="${#authentication.}"></strong>
+                            <br />
+                            <span class="text-muted">@helen_m</span>
+                        </div>
+                        <div class="cui-profile-head-card-right">
+                            <p>
+                                It's ME
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="cui-profile-head-card">
+                    <div class="cui-profile-head-card-content">
+                        <div class="cui-profile-head-card-left mt-0">
                             <a
                                     class="d-block mx-auto mb-2 cui-avatar cui-avatar-90 cui-avatar-bordered cui-avatar-border-white"
                                     href="javascript: void(0);"
@@ -67,8 +81,7 @@
                         </div>
                         <div class="cui-profile-head-card-right">
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                Professor
                             </p>
                         </div>
                     </div>
