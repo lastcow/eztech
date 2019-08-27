@@ -4,6 +4,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import me.chen.eztech.dto.FileDto;
 import me.chen.eztech.dto.FileItemDto;
+import me.chen.eztech.model.Event;
+import me.chen.eztech.model.User;
+import me.chen.eztech.service.EventService;
+import me.chen.eztech.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +20,11 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -26,6 +33,11 @@ public class FileController {
 
     @Value("${file.root}")
     private String fileRoot;
+
+    @Autowired
+    UserService userService;
+    @Autowired
+    EventService eventService;
 
     @GetMapping("/FileManagerApi")
     public FileDto getFiles(@RequestParam("command") String command, @RequestParam("arguments") String arguments){
@@ -119,8 +131,17 @@ public class FileController {
      * @return
      */
     @PostMapping("/file/upload")
-    public ResponseEntity<?> fileUpload(@RequestParam("file") MultipartFile file){
+    public ResponseEntity<?> fileUpload(@RequestParam("file") MultipartFile file, Principal principal){
 
+        Optional<User> userOptional = userService.getUserByUsername(principal.getName());
+        User user;
+        if(userOptional.isPresent()){
+            user = userOptional.get();
+        }
+        else{
+            // Do nothing
+            return ResponseEntity.ok(null);
+        }
         if(file.isEmpty()){
             return ResponseEntity.ok(null);
         }
@@ -130,6 +151,14 @@ public class FileController {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(fileRoot + file.getOriginalFilename());
             Files.write(path, bytes);
+
+            // Add to event table
+            Event event = new Event();
+            event.setEvent("File uploaded: " + file.getOriginalFilename());
+            event.setEventType("FileUpload");
+            event.setOwner(user);
+            event.setEventTime(new Date(System.currentTimeMillis()));
+            eventService.save(event);
 
         }catch (IOException e){
             e.printStackTrace();

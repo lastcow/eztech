@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="card" data-order-id="card-1" th:fragment="card_student_subject">
+<div class="card" data-order-id="card-1" th:fragment="card_student_subject (events)">
     <div class="card-header">
         <div class="pull-right cui-utils-sortable-control">
             <i
@@ -50,7 +50,7 @@
                                         alt="Alternative text to the image"
                                 />
                             </a>
-                            <strong th:text="${#authentication.}"></strong>
+                            <strong th:text="${#authentication.name}"></strong>
                             <br />
                             <span class="text-muted">@helen_m</span>
                         </div>
@@ -86,6 +86,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div th:each="event : ${events}">
+                <span th:text="${event.eventDesc}"></span>
             </div>
         </div>
     </div>
