@@ -9,5 +9,7 @@ public class EventDto {
     private String username;
     private String eventType;
     private String eventDesc;
+    private String timeStr;
+    private String userImgHash;
 
 }
