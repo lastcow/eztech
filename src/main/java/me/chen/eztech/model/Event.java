@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Data
@@ -16,7 +17,8 @@ public class Event {
     private String id;
 
     private String event;
-    private Date eventTime;
+    private String comment;
+    private Timestamp eventTime;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")

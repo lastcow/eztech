@@ -4,6 +4,7 @@ var dropifyData;
 
 $(function(){
 
+    $('select').select2();
     /**
      * Enable menu
      */

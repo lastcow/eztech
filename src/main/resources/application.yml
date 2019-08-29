@@ -11,7 +11,7 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:mysql://localhost:3306/eztech?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/eztech?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
   jpa:

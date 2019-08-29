@@ -22,6 +22,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -131,7 +132,10 @@ public class FileController {
      * @return
      */
     @PostMapping("/file/upload")
-    public ResponseEntity<?> fileUpload(@RequestParam("file") MultipartFile file, Principal principal){
+    public ResponseEntity<?> fileUpload(@RequestParam("file") MultipartFile file,
+                                        @RequestParam("act") String act,
+                                        @RequestParam("comment") String comment,
+                                        Principal principal){
 
         Optional<User> userOptional = userService.getUserByUsername(principal.getName());
         User user;
@@ -154,10 +158,11 @@ public class FileController {
 
             // Add to event table
             Event event = new Event();
-            event.setEvent("File uploaded: " + file.getOriginalFilename());
-            event.setEventType("FileUpload");
+            event.setEvent(act+ ": " + file.getOriginalFilename());
+            event.setEventType("fileupload");
+            event.setComment(comment);
             event.setOwner(user);
-            event.setEventTime(new Date(System.currentTimeMillis()));
+            event.setEventTime(new Timestamp(System.currentTimeMillis()));
             eventService.save(event);
 
         }catch (IOException e){
