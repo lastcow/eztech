@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -24,7 +25,7 @@ public class Project {
     private String description;
     private Date duedate;
     private String status;
-
+    private Timestamp createdat;
     /**
      * One professor can have multiple project
      */

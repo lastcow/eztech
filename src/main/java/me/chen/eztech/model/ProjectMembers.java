@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
  * Student can enroll in many topics and topics can have many students enrolled.
@@ -17,6 +18,7 @@ public class ProjectMembers {
     @GenericGenerator(name="system-uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
     private boolean active;
+    private Timestamp joined;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

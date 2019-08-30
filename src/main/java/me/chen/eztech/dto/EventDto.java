@@ -1,7 +1,8 @@
 package me.chen.eztech.dto;
 
 import lombok.Data;
-import me.chen.eztech.model.Event;
+
+import java.sql.Timestamp;
 
 @Data
 public class EventDto {
@@ -9,6 +10,7 @@ public class EventDto {
     private String username;
     private String eventType;
     private String eventDesc;
+    private Timestamp eventTime;
     private String timeStr;
     private String userImgHash;
 
