@@ -2,12 +2,11 @@ package me.chen.eztech.controller;
 
 
 import me.chen.eztech.dto.ProjectDto;
+import me.chen.eztech.dto.QuestionDto;
 import me.chen.eztech.dto.UserDto;
-import me.chen.eztech.model.Project;
-import me.chen.eztech.model.ProjectMembers;
-import me.chen.eztech.model.Task;
-import me.chen.eztech.model.User;
+import me.chen.eztech.model.*;
 import me.chen.eztech.service.ProjectService;
+import me.chen.eztech.service.QuestionService;
 import me.chen.eztech.service.TaskService;
 import me.chen.eztech.service.UserService;
 import org.hibernate.Hibernate;
@@ -32,6 +31,8 @@ public class DataController {
     TaskService taskService;
     @Autowired
     UserService userService;
+    @Autowired
+    QuestionService questionService;
 
     @PostMapping(value = "/data/projects", produces = "application/json")
     @ResponseBody
@@ -120,4 +121,16 @@ public class DataController {
 
         return userDtos;
     }
+
+    @PostMapping(value = "/question/new")
+    @ResponseStatus(HttpStatus.OK)
+    public String newQuestion(QuestionDto questionDto, Principal principal){
+
+        String ownerUserName = principal.getName();
+        questionDto.setUsername(ownerUserName);
+        Question question = questionService.newQuestionByDto(questionDto);
+
+        return null;
+    }
+
 }

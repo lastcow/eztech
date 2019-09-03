@@ -53,11 +53,6 @@
                             <br />
                             <span class="text-muted">Student</span>
                         </div>
-                        <div class="cui-profile-head-card-right">
-                            <p>
-                                It's ME
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -77,11 +72,6 @@
                             <strong>Helen Maggie</strong>
                             <br />
                             <span class="text-muted">Professor</span>
-                        </div>
-                        <div class="cui-profile-head-card-right">
-                            <p>
-                                Professor
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -144,41 +134,28 @@
     <div class="card-body">
         <div class="row">
             <div class="col-xl-12">
-                <div class="cui-profile-head-card">
-                    <div
-                            class="cui-profile-head-card-head"
-                            style="background-image: url('../../components/dummy-assets/common/img/photos/6.jpeg');"
-                    >
-                        <h2 class="text-white">
-                            <strong>
-                                Clean. Simple <br />
-                                Responsive
-                            </strong>
-                        </h2>
-                    </div>
-                    <div class="cui-profile-head-card-content">
-                        <div class="cui-profile-head-card-left">
-                            <a
-                                    class="d-block mx-auto mb-2 cui-avatar cui-avatar-90 cui-avatar-bordered cui-avatar-border-white"
-                                    href="javascript: void(0);"
-                            >
-                                <img
-                                        src="../../components/dummy-assets/common/img/avatars/5.jpg"
-                                        alt="Alternative text to the image"
-                                />
-                            </a>
-                            <strong>Helen Maggie</strong>
-                            <br />
-                            <span class="text-muted">@helen_m</span>
-                        </div>
-                        <div class="cui-profile-head-card-right">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                            </p>
-                        </div>
+                <strong>需要完成</strong>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <strong>等待答复</strong>
+                <div class="height-200 custom-scroll cui-utils-scrollable">
+                    <div class="cui-apps-chat-block">
+                        <th:block th:each="question : ${questions}">
+                            <h4>
+                                <span class="badge badge-warning" th:text="${question.timeStr}"></span>
+                                <th:block th:text="${'我提问了: ' + question.question}"></th:block>
+                            </h4>
+                        </th:block>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <strong>等待反馈</strong>
             </div>
         </div>
     </div>
@@ -215,41 +192,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-xl-12">
-                <div class="cui-profile-head-card">
-                    <div
-                            class="cui-profile-head-card-head"
-                            style="background-image: url('../../components/dummy-assets/common/img/photos/6.jpeg');"
-                    >
-                        <h2 class="text-white">
-                            <strong>
-                                Clean. Simple <br />
-                                Responsive
-                            </strong>
-                        </h2>
-                    </div>
-                    <div class="cui-profile-head-card-content">
-                        <div class="cui-profile-head-card-left">
-                            <a
-                                    class="d-block mx-auto mb-2 cui-avatar cui-avatar-90 cui-avatar-bordered cui-avatar-border-white"
-                                    href="javascript: void(0);"
-                            >
-                                <img
-                                        src="../../components/dummy-assets/common/img/avatars/5.jpg"
-                                        alt="Alternative text to the image"
-                                />
-                            </a>
-                            <strong>Helen Maggie</strong>
-                            <br />
-                            <span class="text-muted">@helen_m</span>
-                        </div>
-                        <div class="cui-profile-head-card-right">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -322,6 +265,33 @@
                         <button type="submit" class="btn btn-lg btn-warning width-200">
                             <i class="icmn-upload mr-2"></i>
                             Upload File
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-order-id="card-1" th:fragment="card_student_question_form">
+    <div class="card-header">
+        <div class="cui-utils-title"><strong>Submit your question</strong></div>
+        <div class="cui-utils-title-description">All project related question.</div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-xl-12">
+                <form method="post" id="form_question">
+
+                    <textarea class="form-control mt-3" rows="3" name="question"
+                              placeholder="Ask your question here ..."
+                              data-validation="[NOTEMPTY]"
+                              data-validation-message="Can't empty"></textarea>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-lg btn-warning width-300">
+                            <i class="icmn-upload mr-2"></i>
+                            Submit your question
                         </button>
                     </div>
                 </form>

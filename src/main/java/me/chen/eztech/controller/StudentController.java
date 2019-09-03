@@ -1,10 +1,8 @@
 package me.chen.eztech.controller;
 
 import me.chen.eztech.dto.EventDto;
-import me.chen.eztech.model.Event;
-import me.chen.eztech.model.Project;
-import me.chen.eztech.model.ProjectMembers;
-import me.chen.eztech.model.User;
+import me.chen.eztech.dto.QuestionDto;
+import me.chen.eztech.model.*;
 import me.chen.eztech.service.MD5Util;
 import me.chen.eztech.service.ProjectMemberService;
 import me.chen.eztech.service.UserService;
@@ -91,6 +89,24 @@ public class StudentController {
             // Sort by event date desc
             eventDtos.sort(Comparator.comparing(EventDto::getEventTime).reversed());
             modelMap.addAttribute("events", eventDtos);
+
+            // Get my questions
+            List<Question> myQuestions = user.getQuestions();
+            List<QuestionDto> questionDtos = new ArrayList<>();
+
+            myQuestions.forEach(question -> {
+                // Convert to questionDTO
+                QuestionDto questionDto = new QuestionDto();
+                questionDto.setQuestion( question.getQuestion());
+                questionDto.setTimestamp(question.getCreatedat());
+                questionDto.setTimeStr(prettyTime.format(questionDto.getTimestamp()));
+
+                questionDtos.add(questionDto);
+            });
+
+            // Add question dto to MV
+            questionDtos.sort(Comparator.comparing(QuestionDto::getTimestamp).reversed());
+            modelMap.addAttribute("questions", questionDtos);
 
 
             // Get my avatar

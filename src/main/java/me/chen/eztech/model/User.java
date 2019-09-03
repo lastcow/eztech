@@ -49,5 +49,17 @@ public class User {
     @OneToMany(mappedBy = "owner")
     private List<Event> events;
 
+    /**
+     * I have many questions
+     */
+    @OneToMany(mappedBy = "owner")
+    private List<Question> questions;
+
+    /**
+     * I can answer many questions
+     */
+    @OneToMany(mappedBy = "answer")
+    private List<Question> questionsAnswered;
+
 
 }
