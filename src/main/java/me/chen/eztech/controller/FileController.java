@@ -2,11 +2,13 @@ package me.chen.eztech.controller;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import me.chen.eztech.data.StatusData;
 import me.chen.eztech.dto.FileDto;
 import me.chen.eztech.dto.FileItemDto;
-import me.chen.eztech.model.Event;
-import me.chen.eztech.model.User;
+import me.chen.eztech.model.*;
 import me.chen.eztech.service.EventService;
+import me.chen.eztech.service.ProjectService;
+import me.chen.eztech.service.TaskService;
 import me.chen.eztech.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,6 +41,10 @@ public class FileController {
     UserService userService;
     @Autowired
     EventService eventService;
+    @Autowired
+    ProjectService projectService;
+    @Autowired
+    TaskService taskService;
 
     @GetMapping("/FileManagerApi")
     public FileDto getFiles(@RequestParam("command") String command, @RequestParam("arguments") String arguments){
@@ -133,7 +139,7 @@ public class FileController {
      */
     @PostMapping("/file/upload")
     public ResponseEntity<?> fileUpload(@RequestParam("file") MultipartFile file,
-                                        @RequestParam("act") String act,
+                                        @RequestParam("act") int act,
                                         @RequestParam("comment") String comment,
                                         Principal principal){
 
@@ -150,6 +156,7 @@ public class FileController {
             return ResponseEntity.ok(null);
         }
 
+
         try{
             // Get the file and save it to disk
             byte[] bytes = file.getBytes();
@@ -164,6 +171,21 @@ public class FileController {
             event.setOwner(user);
             event.setEventTime(new Timestamp(System.currentTimeMillis()));
             eventService.save(event);
+
+            // Update project status
+            ProjectMembers projectMembers = user.getProjects().get(0);
+            Project project = projectMembers.getProject();
+            project.setStatus(String.valueOf(act));
+            project = projectService.save(project);
+
+            // Create task
+            Task task = new Task();
+            task.setProject(project);
+            task.setCompleted(false);
+            task.setName(StatusData.name[act]);
+
+            taskService.create(task);
+
 
         }catch (IOException e){
             e.printStackTrace();

@@ -47,6 +47,10 @@ public class ProjectService {
         return projectRepository.getProjectsByProfessorUsername(userName);
     }
 
+    public Project save(Project project){
+        return projectRepository.save(project);
+    }
+
     public Project newProjectWithDto(ProjectDto projectDto, String username){
         // Get owner
         Optional<User> owner = userService.getUserByUsername(username);
